@@ -3,153 +3,393 @@
   "fields": {
     "propuesta_numero": {
       "value": "502821974",
+      "raw_value": "502821974",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "asegurado_apellido_paterno": {
-      "value": "Apellido Paterno RAMIREZ",
+      "value": "RAMIREZ",
+      "raw_value": "RAMIREZ",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "asegurado_apellido_materno": {
-      "value": "Apellido Materno CONDORCHOA",
+      "value": "p CONDORCHOA",
+      "raw_value": "p CONDORCHOA",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "asegurado_nombres": {
-      "value": "Nombres LLONA DAISY",
+      "value": "LLONA DAISY",
+      "raw_value": "LLONA DAISY",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "asegurado_fecha_nacimiento_dia": {
       "value": "0 5",
+      "raw_value": "0 5",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "asegurado_fecha_nacimiento_mes": {
       "value": "0 5",
+      "raw_value": "0 5",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "asegurado_fecha_nacimiento_anio": {
       "value": "1 9 9 2",
+      "raw_value": "1 9 9 2",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "asegurado_numero_documento": {
       "value": "72726293",
+      "raw_value": "72726293",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "asegurado_nacionalidad": {
       "value": "PERUANO",
+      "raw_value": "PERUANO",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "asegurado_direccion": {
-      "value": "Domicilio: Jr. Av. Calle Pje. JIRÓN TACNA PASAJE SR DE LOS MILAGROS 135 - . - . - COMAS - LIMA - LIMA",
+      "value": "j JIRÓN TACNA PASAJE SR DE LOS MILAGROS 135 - . - . - COMAS - LIMA - LIMA",
+      "raw_value": "j JIRÓN TACNA PASAJE SR DE LOS MILAGROS 135 - . - . - COMAS - LIMA - LIMA",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "asegurado_telefono_casa": {
-      "value": "Teléfono Casa",
-      "source": "pdf_native",
-      "confidence": 1.0
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
     },
     "asegurado_celular": {
-      "value": "Celular 907955150",
+      "value": "907955150",
+      "raw_value": "907955150",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "asegurado_correo": {
       "value": "llona050592@gmail.com",
+      "raw_value": "llona050592@gmail.com",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "laboral_centro_trabajo": {
-      "value": "Centro de Trabajo ESSALUD",
+      "value": "j ESSALUD",
+      "raw_value": "j ESSALUD",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "laboral_actividad_economica": {
-      "value": "Actividad Económica OTRAS ACTIVIDADES DE ATENCIÓN DE LA SALUD HUMANA",
-      "source": "pdf_native",
-      "confidence": 1.0
-    },
-    "laboral_ingreso_moneda": {
-      "value": "US $",
+      "value": "OTRAS ACTIVIDADES DE ATENCIÓN DE LA SALUD HUMANA",
+      "raw_value": "OTRAS ACTIVIDADES DE ATENCIÓN DE LA SALUD HUMANA",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "laboral_ingreso_monto": {
       "value": "5,000",
+      "raw_value": "5,000",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "laboral_profesion_detalle": {
-      "value": "Profesión/ Detalle de labor específica que desarrolla ENFERMERO / ATENCION A PACIENTES",
+      "value": "p q ENFERMERO / ATENCION A PACIENTES",
+      "raw_value": "p q ENFERMERO / ATENCION A PACIENTES",
       "source": "pdf_native",
       "confidence": 1.0
     },
     "contratante_nombre": {
-      "value": "Nombres",
-      "source": "pdf_native",
-      "confidence": 1.0
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
     },
     "contratante_doc": {
       "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "contratante_vinculo": {
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "contratante_razon_social": {
+      "value": "( )",
+      "raw_value": "( )",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "contratante_apellido_paterno": {
+      "value": "p",
+      "raw_value": "p",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "contratante_apellido_materno": {
+      "value": "p",
+      "raw_value": "p",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "contratante_fecha_nacimiento_dia": {
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "contratante_fecha_nacimiento_mes": {
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "contratante_fecha_nacimiento_anio": {
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "contratante_nacionalidad": {
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "contratante_direccion": {
+      "value": "j",
+      "raw_value": "j",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "contratante_telefono_casa": {
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "contratante_celular": {
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "contratante_correo": {
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "contratante_laboral_centro_trabajo": {
+      "value": "j",
+      "raw_value": "j",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "contratante_laboral_actividad_economica": {
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "contratante_laboral_ingreso_monto": {
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "contratante_laboral_profesion_detalle": {
+      "value": "p q",
+      "raw_value": "p q",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "laboral_direccion": {
+      "value": ". . e .",
+      "raw_value": ". . e .",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "laboral_telefono": {
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "laboral_correo": {
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "contratante_laboral_direccion": {
+      "value": ". . e j .",
+      "raw_value": ". . e j .",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "contratante_laboral_telefono": {
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "contratante_laboral_correo": {
+      "value": "",
+      "raw_value": "",
       "source": "empty",
       "confidence": 0.0
     }
   },
   "checks": {
-    "moneda_solicitud": {
-      "selected": null,
-      "scores": {
-        "Opcion1": 0.0,
-        "Opcion2": 0.0
-      }
-    },
-    "producto_plan": {
-      "selected": "Opcion2",
-      "scores": {
-        "Opcion1": 0.2538,
-        "Opcion2": 0.8071
-      }
-    },
     "asegurado_tipo_documento": {
-      "selected": "Opcion1",
+      "selected": "DNI",
       "scores": {
-        "Opcion1": 0.9949,
-        "Opcion2": 0.2284
+        "DNI": 1.0,
+        "RUC": 0.2386,
+        "CE": 0.2284
       }
     },
     "asegurado_sexo": {
-      "selected": "Opcion2",
+      "selected": "Femenino",
       "scores": {
-        "Opcion1": 0.203,
-        "Opcion2": 0.7462
+        "Masculino": 0.2183,
+        "Femenino": 1.0
       }
     },
     "asegurado_estado_civil": {
-      "selected": "Opcion1",
+      "selected": "Soltero(a)",
       "scores": {
-        "Opcion1": 0.8579,
-        "Opcion2": 0.2183
+        "Soltero(a)": 1.0,
+        "Casado(a)": 0.2183,
+        "Viudo(a)": 0.1777,
+        "Divorciado(a)": 0.1929,
+        "Conviviente": 0.2792
       }
     },
     "asegurado_pep": {
-      "selected": "Opcion2",
+      "selected": "No",
       "scores": {
-        "Opcion1": 0.1827,
-        "Opcion2": 0.8579
+        "Si": 0.198,
+        "No": 0.9949
       }
     },
     "asegurado_sujeto_obligado": {
-      "selected": "Opcion2",
+      "selected": "No",
       "scores": {
-        "Opcion1": 0.2132,
-        "Opcion2": 0.9848
+        "Si": 0.198,
+        "No": 0.9442
+      }
+    },
+    "contratante_tipo_documento": {
+      "selected": "CE",
+      "scores": {
+        "DNI": 0.1218,
+        "CE": 0.1827,
+        "RUC": 0.1015
+      }
+    },
+    "contratante_sexo": {
+      "selected": "Femenino",
+      "scores": {
+        "Masculino": 0.1269,
+        "Femenino": 0.1523
+      }
+    },
+    "contratante_estado_civil": {
+      "selected": "Viudo(a)",
+      "scores": {
+        "Soltero(a)": 0.1421,
+        "Casado(a)": 0.1421,
+        "Viudo(a)": 0.2487,
+        "Divorciado(a)": 0.2437,
+        "Conviviente": 0.2183
+      }
+    },
+    "contratante_pep": {
+      "selected": null,
+      "scores": {
+        "Si": 0.1117,
+        "No": 0.1015
+      }
+    },
+    "contratante_sujeto_obligado": {
+      "selected": "No",
+      "scores": {
+        "Si": 0.0964,
+        "No": 0.1878
+      }
+    },
+    "contratante_laboral_ingreso_moneda": {
+      "selected": null,
+      "scores": {
+        "Soles": 0.1218,
+        "Dolares": 0.1421
+      }
+    },
+    "asegurado_direccion_tipo_via": {
+      "selected": "Jr",
+      "scores": {
+        "Jr": 1.0,
+        "Av": 0.1675,
+        "Calle": 0.1675,
+        "Pje": 0.2284
+      }
+    },
+    "laboral_direccion_tipo_via": {
+      "selected": "Pje",
+      "scores": {
+        "Jr": 0.1066,
+        "Av": 0.2183,
+        "Calle": 0.2132,
+        "Pje": 0.2437
+      }
+    },
+    "contratante_direccion_tipo_via": {
+      "selected": "Av",
+      "scores": {
+        "Jr": 0.2589,
+        "Av": 0.2741,
+        "Calle": 0.2487,
+        "Pje": 0.2284
+      }
+    },
+    "contratante_laboral_direccion_tipo_via": {
+      "selected": "Jr",
+      "scores": {
+        "Jr": 0.2944,
+        "Av": 0.1777,
+        "Calle": 0.198,
+        "Pje": 0.2284
+      }
+    },
+    "moneda_solicitud": {
+      "selected": "S/",
+      "scores": {
+        "S/": 1.0,
+        "US$": 0.0914
+      }
+    },
+    "producto_plan": {
+      "selected": "Vida Free Plus New",
+      "scores": {
+        "Vida Free": 0.1827,
+        "Vida Free Plus New": 1.0,
+        "Vida Free Total": 0.1624
+      }
+    },
+    "laboral_ingreso_moneda": {
+      "selected": "S/",
+      "scores": {
+        "S/": 0.9289,
+        "US$": 0.1574
       }
     }
   },
