@@ -116,8 +116,12 @@ def consolidate_results(pages_results: List[Dict[str, Any]]) -> Dict[str, Any]:
     if not cont_nom or (aseg_nom and aseg_nom.lower() == cont_nom.lower()):
         keys_to_remove = [k for k in consolidated["fields"] if k.startswith("contratante_")]
         for k in keys_to_remove:
-            # Eliminar para no dejar filas falsas
             del consolidated["fields"][k]
+            
+        keys_to_remove_checks = [k for k in consolidated["checks"] if k.startswith("contratante_")]
+        for k in keys_to_remove_checks:
+            del consolidated["checks"][k]
+            
         consolidated["validations"].append("NEGOCIO: Contratante vacío o igual a asegurado. Datos del contratante omitidos.")
 
     # 4. Suma de beneficiarios = 100%
