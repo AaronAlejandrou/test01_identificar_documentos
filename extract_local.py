@@ -300,6 +300,8 @@ def extract_page_fields(page_image: np.ndarray, page: fitz.Page, cfg: Dict[str, 
         "signatures": {}
     }
 
+    cleanup_cfg = cfg.get("cleanup_rules", {})
+
     # --------------------------------------------------------
     # 1) CAMPOS DE TEXTO
     # --------------------------------------------------------
@@ -307,22 +309,33 @@ def extract_page_fields(page_image: np.ndarray, page: fitz.Page, cfg: Dict[str, 
         native_text = extract_pdf_native_text(page, bbox)
 
         if native_text:
-            final_text = native_text
+            raw_text = native_text
             source = "pdf_native"
             confidence = 1.0
         else:
             roi = crop_image(page_image, bbox)
             ocr_text, ocr_conf = extract_text_with_ocr(ocr_engine, roi)
-            final_text = ocr_text
+            raw_text = ocr_text
             source = "ocr"
             confidence = ocr_conf
 
-        if not final_text:
+        # Aplicar reglas de limpieza (remover labels estáticos)
+        clean_val = raw_text
+        if field_name in cleanup_cfg:
+            for rule in cleanup_cfg[field_name]:
+                clean_val = clean_val.replace(rule, "")
+        
+        clean_val = clean_val.strip(" :-\t\n\r")
+        clean_val = clean_text(clean_val)
+
+        if not clean_val:
+            clean_val = ""
             source = "empty"
             confidence = 0.0
 
         result["fields"][field_name] = {
-            "value": final_text,
+            "value": clean_val,
+            "raw_value": raw_text,
             "source": source,
             "confidence": confidence
         }

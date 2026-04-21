@@ -23,7 +23,7 @@ from extract_local import (
 
 def detect_page_template(page: fitz.Page, templates: Dict[str, Any]) -> Optional[str]:
     """
-    Extrae el texto de la página y cuenta cuántos 'identifiers'
+    Extrae el texto de la página y cuenta cuántos 'page_identifiers'
     de cada plantilla están presentes. Retorna el nombre de la plantilla
     con mayor coincidencia (score).
     """
@@ -34,13 +34,13 @@ def detect_page_template(page: fitz.Page, templates: Dict[str, Any]) -> Optional
     best_score = 0
     
     for tmpl_name, tmpl_data in templates.items():
-        identifiers = tmpl_data.get("identifiers", [])
+        identifiers = tmpl_data.get("page_identifiers", [])
         score = 0
         for ident in identifiers:
             if ident.lower() in page_text:
                 score += 1
                 
-        if score > best_score:
+        if score > best_score and score > 0:
             best_score = score
             best_template = tmpl_name
             
@@ -50,7 +50,7 @@ def detect_page_template(page: fitz.Page, templates: Dict[str, Any]) -> Optional
 def consolidate_results(pages_results: List[Dict[str, Any]]) -> Dict[str, Any]:
     """
     Consolida los resultados de todas las páginas en un solo objeto
-    y aplica las reglas de negocio/validaciones.
+    y aplica las reglas de negocio/validaciones solicitadas.
     """
     consolidated = {
         "fields": {},
@@ -59,8 +59,6 @@ def consolidate_results(pages_results: List[Dict[str, Any]]) -> Dict[str, Any]:
         "validations": []
     }
     
-    # 1. Unir todos los campos
-    # Guardamos de qué página vino cada campo para validaciones cruzadas
     field_sources = defaultdict(list)
     
     for page_res in pages_results:
@@ -86,54 +84,83 @@ def consolidate_results(pages_results: List[Dict[str, Any]]) -> Dict[str, Any]:
                 consolidated["signatures"][k] = v
                 field_sources[k].append({"page": page_num, "value": v.get("present")})
                 
-    # 2. Aplicar reglas de negocio
+    # ==========================================
+    # APLICACIÓN DE REGLAS DE NEGOCIO
+    # ==========================================
     
-    # Regla 2: Validaciones cruzadas
-    # propuesta_numero
+    # 1. Validación cruzada de propuesta_numero
     if "propuesta_numero" in field_sources and len(field_sources["propuesta_numero"]) > 1:
         first_val = field_sources["propuesta_numero"][0]["value"]
         for entry in field_sources["propuesta_numero"][1:]:
             if entry["value"] != first_val:
                 consolidated["validations"].append(
-                    f"Discrepancia en propuesta_numero: pág {field_sources['propuesta_numero'][0]['page']} ({first_val}) "
+                    f"CRUZADA: Discrepancia en propuesta_numero: pág {field_sources['propuesta_numero'][0]['page']} ({first_val}) "
                     f"vs pág {entry['page']} ({entry['value']})"
                 )
-                
-    # Regla 1: Campos condicionales
-    # Datos del contratante solo si es distinto al asegurado
-    aseg_nom = consolidated["fields"].get("asegurado_nombres", {}).get("value", "").strip().lower()
-    cont_nom = consolidated["fields"].get("contratante_nombre", {}).get("value", "").strip().lower()
+
+    # 2. Validación cruzada de nombre/documento asegurado
+    aseg_nom = consolidated["fields"].get("asegurado_nombres", {}).get("value", "")
+    aseg_doc = consolidated["fields"].get("asegurado_numero_documento", {}).get("value", "")
+    nota_aseg_nom = consolidated["fields"].get("asegurado_nombre_nota", {}).get("value", "")
+    nota_aseg_doc = consolidated["fields"].get("asegurado_doc_nota", {}).get("value", "")
     
-    if aseg_nom and cont_nom and aseg_nom == cont_nom:
-        consolidated["validations"].append("Contratante es igual al asegurado. Ignorando campos de contratante repetidos.")
-        # Podríamos limpiar los campos del contratante aquí si se requiere
-        
-    # Regla 4: Sumatoria de beneficiarios
+    if aseg_nom and nota_aseg_nom and aseg_nom.lower() not in nota_aseg_nom.lower() and nota_aseg_nom.lower() not in aseg_nom.lower():
+        consolidated["validations"].append(f"CRUZADA: Nombre de asegurado difiere entre Solicitud ({aseg_nom}) y Nota ({nota_aseg_nom})")
+    if aseg_doc and nota_aseg_doc and aseg_doc != nota_aseg_doc:
+        consolidated["validations"].append(f"CRUZADA: Documento de asegurado difiere entre Solicitud ({aseg_doc}) y Nota ({nota_aseg_doc})")
+
+    # 3. Datos fantasmas del contratante
+    cont_nom = consolidated["fields"].get("contratante_nombre", {}).get("value", "")
+    
+    # Si contratante_nombre no vino, o es exactamente igual al asegurado, limpiamos sus campos
+    if not cont_nom or (aseg_nom and aseg_nom.lower() == cont_nom.lower()):
+        keys_to_remove = [k for k in consolidated["fields"] if k.startswith("contratante_")]
+        for k in keys_to_remove:
+            # Eliminar para no dejar filas falsas
+            del consolidated["fields"][k]
+        consolidated["validations"].append("NEGOCIO: Contratante vacío o igual a asegurado. Datos del contratante omitidos.")
+
+    # 4. Suma de beneficiarios = 100%
     total_pct = 0.0
     for i in range(1, 4):
         pct_str = consolidated["fields"].get(f"beneficiario_{i}_porcentaje", {}).get("value", "")
         if pct_str:
             try:
-                # Quitar '%' si lo hay y sumar
                 val = float(pct_str.replace("%", "").strip())
                 total_pct += val
             except ValueError:
                 pass
                 
     if total_pct > 0 and total_pct != 100.0:
-        consolidated["validations"].append(f"La sumatoria de porcentajes de beneficiarios es {total_pct}%, debería ser 100%.")
+        consolidated["validations"].append(f"NEGOCIO: La sumatoria de porcentajes de beneficiarios es {total_pct}%, debería ser 100%.")
+
+    # 5. Consistencia de monto a pagar (pag 8) vs prima_total (pag 2)
+    monto_pagar = consolidated["fields"].get("monto_pagar", {}).get("value", "")
+    prima_total = consolidated["fields"].get("prima_total", {}).get("value", "")
+    if monto_pagar and prima_total and monto_pagar != prima_total:
+        consolidated["validations"].append(f"CRUZADA: Monto a pagar final ({monto_pagar}) difiere de prima_total ({prima_total})")
+
+    # 6 y 7. Tablas vacías y dependencias (Ej: fuma_detalle depende de fuma)
+    fuma_val = consolidated["checks"].get("fuma", {}).get("selected", "")
+    if fuma_val != "Si" and "fuma_detalle" in consolidated["fields"]:
+        del consolidated["fields"]["fuma_detalle"]
+        consolidated["validations"].append("NEGOCIO: Fuma es No/Vacío, se omitió fuma_detalle.")
+        
+    alcohol_val = consolidated["checks"].get("alcohol", {}).get("selected", "")
+    if alcohol_val != "Si" and "alcohol_detalle" in consolidated["fields"]:
+        del consolidated["fields"]["alcohol_detalle"]
+        
+    drogas_val = consolidated["checks"].get("drogas", {}).get("selected", "")
+    if drogas_val != "Si" and "drogas_fecha" in consolidated["fields"]:
+        del consolidated["fields"]["drogas_fecha"]
 
     return consolidated
 
 
 def process_pack(pdf_path: str, profile_path: str, output_path: str):
-    """
-    Orquestador principal que procesa un paquete PDF multipágina.
-    """
     profile = load_json(profile_path)
     base_dir = os.path.dirname(profile_path)
     
-    # Cargar las plantillas definidas en el perfil
     templates = {}
     for tmpl_name in profile.get("page_templates", []):
         tmpl_path = os.path.join(base_dir, f"{tmpl_name}.json")
@@ -152,21 +179,18 @@ def process_pack(pdf_path: str, profile_path: str, output_path: str):
     for i in range(doc.page_count):
         page = doc[i]
         
-        # Detectar qué plantilla corresponde
         template_name = detect_page_template(page, templates)
         
         if not template_name:
-            print(f" - Pág {i+1}: Sin plantilla asignada (Omitiendo)")
+            print(f" - Pág {i+1}: WARNING - Ninguna plantilla hizo match con el texto de la página. (Omitiendo)")
             continue
             
         print(f" - Pág {i+1}: Plantilla detectada -> {template_name}")
         
-        # Cargar config de la plantilla
         cfg = templates[template_name]
         canonical_w = int(cfg["canonical"]["width"])
         canonical_h = int(cfg["canonical"]["height"])
         
-        # Renderizar y extraer
         page_image, _ = render_pdf_page(doc, i, canonical_w, canonical_h)
         page_res = extract_page_fields(page_image, page, cfg, ocr_engine)
         

@@ -106,8 +106,59 @@
       0.0,
       0.1,
       0.1
+    ],
+    "contratante_nombre_nota": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_doc_nota": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "asegurado_nombre_nota": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "asegurado_doc_nota": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "agente_codigo_nota": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "agente_nombre_nota": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
     ]
   },
   "signature_fields": {},
-  "checkbox_groups": {}
+  "checkbox_groups": {},
+  "page_identifiers": [
+    "Nota de Cobertura Provisional",
+    "CODIGO SBS",
+    "Ramo de Seguros"
+  ],
+  "cleanup_rules": {
+    "codigo_sbs": [
+      "CODIGO SBS",
+      "Código SBS"
+    ],
+    "ramo_seguro": [
+      "Ramo de Seguros",
+      "Ramo"
+    ]
+  }
 }

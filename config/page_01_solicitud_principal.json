@@ -130,6 +130,114 @@
       0.587003,
       0.600967,
       0.604104
+    ],
+    "moneda_solicitud": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "producto_plan": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_vinculo": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_razon_social": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_apellido_paterno": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_apellido_materno": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_fecha_nacimiento_dia": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_fecha_nacimiento_mes": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_fecha_nacimiento_anio": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_nacionalidad": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_direccion": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_telefono_casa": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_celular": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_correo": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_laboral_centro_trabajo": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_laboral_actividad_economica": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_laboral_ingreso_monto": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_laboral_profesion_detalle": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
     ]
   },
   "signature_fields": {},
@@ -139,13 +247,13 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
-          0.545345,
-          0.00342
+        "Soles": [
+          0.0,
+          0.0
         ],
-        "Opcion2": [
-          0.993349,
-          0.99658
+        "Dolares": [
+          0.0,
+          0.0
         ]
       }
     },
@@ -154,13 +262,17 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
-          0.25393,
-          0.109876
+        "Plan A": [
+          0.0,
+          0.0
         ],
-        "Opcion2": [
-          0.421403,
-          0.109876
+        "Plan B": [
+          0.0,
+          0.0
+        ],
+        "Plan C": [
+          0.0,
+          0.0
         ]
       }
     },
@@ -169,13 +281,17 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
-          0.573761,
-          0.203078
+        "DNI": [
+          0.0,
+          0.0
         ],
-        "Opcion2": [
-          0.663241,
-          0.200086
+        "CE": [
+          0.0,
+          0.0
+        ],
+        "Pasaporte": [
+          0.0,
+          0.0
         ]
       }
     },
@@ -184,13 +300,13 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
-          0.833132,
-          0.218897
+        "Masculino": [
+          0.0,
+          0.0
         ],
-        "Opcion2": [
-          0.948609,
-          0.217187
+        "Femenino": [
+          0.0,
+          0.0
         ]
       }
     },
@@ -199,13 +315,25 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
-          0.130593,
-          0.249679
+        "Soltero(a)": [
+          0.0,
+          0.0
         ],
-        "Opcion2": [
-          0.234583,
-          0.249679
+        "Casado(a)": [
+          0.0,
+          0.0
+        ],
+        "Viudo(a)": [
+          0.0,
+          0.0
+        ],
+        "Divorciado(a)": [
+          0.0,
+          0.0
+        ],
+        "Conviviente": [
+          0.0,
+          0.0
         ]
       }
     },
@@ -214,13 +342,13 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
-          0.075574,
-          0.35186
+        "Si": [
+          0.0,
+          0.0
         ],
-        "Opcion2": [
-          0.288392,
-          0.351005
+        "No": [
+          0.0,
+          0.0
         ]
       }
     },
@@ -229,15 +357,211 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
-          0.498186,
-          0.351005
+        "Si": [
+          0.0,
+          0.0
         ],
-        "Opcion2": [
-          0.547158,
-          0.35186
+        "No": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "laboral_ingreso_moneda": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Soles": [
+          0.0,
+          0.0
+        ],
+        "Dolares": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "contratante_tipo_documento": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "DNI": [
+          0.0,
+          0.0
+        ],
+        "CE": [
+          0.0,
+          0.0
+        ],
+        "Pasaporte": [
+          0.0,
+          0.0
+        ],
+        "RUC": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "contratante_sexo": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Masculino": [
+          0.0,
+          0.0
+        ],
+        "Femenino": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "contratante_estado_civil": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Soltero(a)": [
+          0.0,
+          0.0
+        ],
+        "Casado(a)": [
+          0.0,
+          0.0
+        ],
+        "Viudo(a)": [
+          0.0,
+          0.0
+        ],
+        "Divorciado(a)": [
+          0.0,
+          0.0
+        ],
+        "Conviviente": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "contratante_pep": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Si": [
+          0.0,
+          0.0
+        ],
+        "No": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "contratante_sujeto_obligado": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Si": [
+          0.0,
+          0.0
+        ],
+        "No": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "contratante_laboral_ingreso_moneda": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Soles": [
+          0.0,
+          0.0
+        ],
+        "Dolares": [
+          0.0,
+          0.0
         ]
       }
     }
+  },
+  "page_identifiers": [
+    "Solicitud de Seguro de Vida",
+    "Datos Personales del Asegurado",
+    "Datos Laborales del Asegurado"
+  ],
+  "cleanup_rules": {
+    "asegurado_apellido_paterno": [
+      "Apellido Paterno"
+    ],
+    "asegurado_apellido_materno": [
+      "Apellido Materno"
+    ],
+    "asegurado_nombres": [
+      "Nombres"
+    ],
+    "asegurado_direccion": [
+      "Domicilio:",
+      "Dirección",
+      "Jr.",
+      "Av.",
+      "Calle",
+      "Pje."
+    ],
+    "asegurado_telefono_casa": [
+      "Teléfono"
+    ],
+    "asegurado_celular": [
+      "Celular"
+    ],
+    "asegurado_correo": [
+      "Correo Electrónico"
+    ],
+    "laboral_centro_trabajo": [
+      "Centro de Trabajo"
+    ],
+    "laboral_actividad_economica": [
+      "Actividad Económica"
+    ],
+    "laboral_profesion_detalle": [
+      "Profesión/ Detalle de labor específica que desarrolla"
+    ],
+    "contratante_apellido_paterno": [
+      "Apellido Paterno"
+    ],
+    "contratante_apellido_materno": [
+      "Apellido Materno"
+    ],
+    "contratante_nombre": [
+      "Nombres"
+    ],
+    "contratante_direccion": [
+      "Domicilio:",
+      "Dirección",
+      "Jr.",
+      "Av.",
+      "Calle",
+      "Pje."
+    ],
+    "contratante_celular": [
+      "Celular"
+    ],
+    "contratante_correo": [
+      "Correo Electrónico"
+    ],
+    "contratante_laboral_centro_trabajo": [
+      "Centro de Trabajo"
+    ],
+    "contratante_laboral_actividad_economica": [
+      "Actividad Económica"
+    ]
   }
 }

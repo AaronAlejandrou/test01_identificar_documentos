@@ -69,6 +69,30 @@
       0.0,
       0.1,
       0.1
+    ],
+    "estatura_cm": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "peso_kg": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "variacion_peso_cantidad": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "variacion_peso_motivo": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
     ]
   },
   "signature_fields": {},
@@ -108,12 +132,12 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Si": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "No": [
+          0.0,
           0.0
         ]
       }
@@ -123,12 +147,12 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Si": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "No": [
+          0.0,
           0.0
         ]
       }
@@ -138,12 +162,12 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Si": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "No": [
+          0.0,
           0.0
         ]
       }
@@ -153,12 +177,12 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Si": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "No": [
+          0.0,
           0.0
         ]
       }
@@ -168,12 +192,12 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Si": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "No": [
+          0.0,
           0.0
         ]
       }
@@ -183,12 +207,12 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Si": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "No": [
+          0.0,
           0.0
         ]
       }
@@ -198,12 +222,12 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Si": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "No": [
+          0.0,
           0.0
         ]
       }
@@ -213,12 +237,12 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Si": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "No": [
+          0.0,
           0.0
         ]
       }
@@ -228,15 +252,59 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Si": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "No": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "variacion_peso_mayor_5kg": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Si": [
+          0.0,
+          0.0
+        ],
+        "No": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "variacion_peso_tipo": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Aumento": [
+          0.0,
+          0.0
+        ],
+        "Disminucion": [
+          0.0,
           0.0
         ]
       }
     }
+  },
+  "page_identifiers": [
+    "DECLARACIÓN PERSONAL DE SALUD",
+    "Información Adicional del Asegurado"
+  ],
+  "cleanup_rules": {
+    "estatura_cm": [
+      "Estatura",
+      "cm"
+    ],
+    "peso_kg": [
+      "Peso",
+      "kg"
+    ]
   }
 }

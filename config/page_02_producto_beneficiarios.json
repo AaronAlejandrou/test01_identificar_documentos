@@ -136,6 +136,30 @@
       0.0,
       0.1,
       0.1
+    ],
+    "cobertura_principal_fallecimiento_capital": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "cobertura_principal_fallecimiento_prima": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "clausula_invalidez_total_capital": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "clausula_invalidez_total_prima": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
     ]
   },
   "signature_fields": {},
@@ -145,12 +169,12 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Anual": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "Mensual": [
+          0.0,
           0.0
         ]
       }
@@ -160,12 +184,20 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Anual": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "Semestral": [
+          0.0,
+          0.0
+        ],
+        "Trimestral": [
+          0.0,
+          0.0
+        ],
+        "Mensual": [
+          0.0,
           0.0
         ]
       }
@@ -175,12 +207,12 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Bajo": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "Alto": [
+          0.0,
           0.0
         ]
       }
@@ -190,15 +222,47 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Soles": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "Dolares": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "porcentaje_devolucion": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "0%": [
+          0.0,
+          0.0
+        ],
+        "50%": [
+          0.0,
+          0.0
+        ],
+        "100%": [
+          0.0,
           0.0
         ]
       }
     }
+  },
+  "page_identifiers": [
+    "Detalle del Producto",
+    "Detalle del prima",
+    "Declaración de Beneficiarios"
+  ],
+  "cleanup_rules": {
+    "prima_total": [
+      "Prima Total"
+    ],
+    "igv": [
+      "IGV"
+    ]
   }
 }

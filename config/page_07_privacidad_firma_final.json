@@ -74,15 +74,56 @@
       "inner_radius_norm": 0.005,
       "mark_threshold": 0.15,
       "options": {
-        "Opcion1": [
+        "Soles": [
           0.0,
           0.0
         ],
-        "Opcion2": [
-          0.1,
+        "Dolares": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "privacidad_contratante": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Si": [
+          0.0,
+          0.0
+        ],
+        "No": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "privacidad_asegurado": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Si": [
+          0.0,
+          0.0
+        ],
+        "No": [
+          0.0,
           0.0
         ]
       }
     }
+  },
+  "page_identifiers": [
+    "Política de Privacidad",
+    "Consentimiento para Tratamiento de Datos Personales",
+    "Monto a pagar"
+  ],
+  "cleanup_rules": {
+    "monto_pagar": [
+      "Monto a pagar",
+      "Total"
+    ]
   }
 }
