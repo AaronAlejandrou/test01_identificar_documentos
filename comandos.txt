@@ -1,0 +1,8 @@
+python inspect_blocks.py "sac-formulario-de-ingreso-de-solicitudes.pdf" --config config/form_blocks_interseguro.json --output overlay.png --ranges rangos.txt
+
+python calibrate_blocks.py "sac-formulario-de-ingreso-de-solicitudes.pdf" --config config/form_blocks_interseguro.json --mode text
+
+sign
+radio
+
+python extract_local.py "sac-formulario-de-ingreso-de-solicitudes.pdf" --config "config/form_blocks_interseguro.json" --output "resultado.json"

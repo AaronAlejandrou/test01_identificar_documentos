@@ -1,0 +1,256 @@
+{
+  "document_type": "interseguro_sac_form",
+  "template_version": "local_simple_v1",
+  "canonical": {
+    "width": 1654,
+    "height": 2339
+  },
+  "text_fields": {
+    "numero_caso": [
+      0.715236,
+      0.10218,
+      0.941959,
+      0.12313
+    ],
+    "fecha_recepcion": [
+      0.746675,
+      0.122274,
+      0.94075,
+      0.142369
+    ],
+    "poliza": [
+      0.106409,
+      0.253955,
+      0.486699,
+      0.274904
+    ],
+    "linea": [
+      0.55925,
+      0.252672,
+      0.943773,
+      0.275759
+    ],
+    "apellido_paterno": [
+      0.181378,
+      0.274904,
+      0.484281,
+      0.297563
+    ],
+    "apellido_materno": [
+      0.645707,
+      0.275759,
+      0.949819,
+      0.297563
+    ],
+    "nombres": [
+      0.131197,
+      0.296708,
+      0.48549,
+      0.318512
+    ],
+    "direccion": [
+      0.129988,
+      0.319795,
+      0.946191,
+      0.338606
+    ],
+    "telefono": [
+      0.122128,
+      0.338606,
+      0.272672,
+      0.359555
+    ],
+    "celular": [
+      0.346433,
+      0.338606,
+      0.488513,
+      0.360838
+    ],
+    "correo_electronico": [
+      0.654776,
+      0.337751,
+      0.944982,
+      0.3587
+    ],
+    "descripcion_caso": [
+      0.039299,
+      0.550663,
+      0.961911,
+      0.646003
+    ],
+    "documento_1": [
+      0.06711,
+      0.681488,
+      0.944982,
+      0.705002
+    ],
+    "documento_2": [
+      0.068319,
+      0.705002,
+      0.946191,
+      0.725951
+    ],
+    "documento_3": [
+      0.068319,
+      0.725951,
+      0.946191,
+      0.746045
+    ],
+    "responsable_ejecutiva_nombre": [
+      0.348851,
+      0.815733,
+      0.648126,
+      0.857631
+    ],
+    "responsable_agente_nombre": [
+      0.35006,
+      0.858914,
+      0.648126,
+      0.877726
+    ],
+    "responsable_area_nombre": [
+      0.35006,
+      0.879008,
+      0.64994,
+      0.89782
+    ],
+    "responsable_supervisor_nombre": [
+      0.649335,
+      0.816588,
+      0.941959,
+      0.857631
+    ]
+  },
+  "signature_fields": {
+    "responsable_ejecutiva_firma": [
+      0.649335,
+      0.817443,
+      0.941959,
+      0.858059
+    ],
+    "responsable_agente_firma": [
+      0.649335,
+      0.858059,
+      0.942563,
+      0.879863
+    ],
+    "responsable_area_firma": [
+      0.64994,
+      0.879008,
+      0.942563,
+      0.89782
+    ],
+    "responsable_supervisor_firma": [
+      0.347642,
+      0.816588,
+      0.649335,
+      0.858059
+    ]
+  },
+  "checkbox_groups": {
+    "medio_ingreso": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Carta": [
+          0.207981,
+          0.117144
+        ],
+        "Fax": [
+          0.207376,
+          0.134245
+        ],
+        "Telefono": [
+          0.207376,
+          0.150492
+        ],
+        "Correo Electronico": [
+          0.207981,
+          0.165455
+        ],
+        "Presencial": [
+          0.207981,
+          0.181702
+        ],
+        "Agente": [
+          0.207981,
+          0.196665
+        ]
+      }
+    },
+    "tipo_caso": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Requerimiento": [
+          0.060459,
+          0.412569
+        ],
+        "Reclamo": [
+          0.060459,
+          0.429671
+        ],
+        "Consulta": [
+          0.060459,
+          0.44549
+        ]
+      }
+    },
+    "entregar_respuesta_via": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Agente": [
+          0.311971,
+          0.472852
+        ],
+        "Cliente": [
+          0.403869,
+          0.472852
+        ],
+        "Correo Electronico": [
+          0.578597,
+          0.472852
+        ],
+        "Fax": [
+          0.653567,
+          0.472852
+        ],
+        "Oficina Servicio al Cliente": [
+          0.890568,
+          0.472852
+        ]
+      }
+    },
+    "medio_respuesta_pactado": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Carta": [
+          0.337364,
+          0.495938
+        ],
+        "Telefono": [
+          0.439541,
+          0.496794
+        ],
+        "Correo Electronico": [
+          0.617291,
+          0.496794
+        ],
+        "Fax": [
+          0.692866,
+          0.495938
+        ],
+        "Oficina Servicio al Cliente": [
+          0.929867,
+          0.496794
+        ]
+      }
+    }
+  }
+}

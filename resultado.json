@@ -1,0 +1,155 @@
+{
+  "source_file": "sac-formulario-de-ingreso-de-solicitudes.pdf",
+  "fields": {
+    "numero_caso": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "fecha_recepcion": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "poliza": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "linea": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "apellido_paterno": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "apellido_materno": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "nombres": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "direccion": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "telefono": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "celular": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "correo_electronico": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "descripcion_caso": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "documento_1": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "documento_2": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "documento_3": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "responsable_ejecutiva_nombre": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "responsable_agente_nombre": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "responsable_area_nombre": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    },
+    "responsable_supervisor_nombre": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    }
+  },
+  "checks": {
+    "medio_ingreso": {
+      "selected": null,
+      "scores": {
+        "Carta": 0.0,
+        "Fax": 0.0,
+        "Telefono": 0.0,
+        "Correo Electronico": 0.0,
+        "Presencial": 0.0,
+        "Agente": 0.0
+      }
+    },
+    "tipo_caso": {
+      "selected": null,
+      "scores": {
+        "Requerimiento": 0.0,
+        "Reclamo": 0.0,
+        "Consulta": 0.0
+      }
+    },
+    "entregar_respuesta_via": {
+      "selected": null,
+      "scores": {
+        "Agente": 0.0,
+        "Cliente": 0.0,
+        "Correo Electronico": 0.0,
+        "Fax": 0.0,
+        "Oficina Servicio al Cliente": 0.0
+      }
+    },
+    "medio_respuesta_pactado": {
+      "selected": null,
+      "scores": {
+        "Carta": 0.0,
+        "Telefono": 0.0,
+        "Correo Electronico": 0.0,
+        "Fax": 0.0,
+        "Oficina Servicio al Cliente": 0.0
+      }
+    }
+  },
+  "signatures": {
+    "responsable_ejecutiva_firma": {
+      "present": true
+    },
+    "responsable_agente_firma": {
+      "present": true
+    },
+    "responsable_area_firma": {
+      "present": false
+    },
+    "responsable_supervisor_firma": {
+      "present": true
+    }
+  }
+}
