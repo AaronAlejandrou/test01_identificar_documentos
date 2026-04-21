@@ -1,0 +1,113 @@
+{
+  "document_type": "page_05",
+  "template_version": "v1",
+  "identifiers": [
+    "Nota de Cobertura Provisional",
+    "CODIGO SBS",
+    "Ramo de Seguros"
+  ],
+  "canonical": {
+    "width": 1654,
+    "height": 2339
+  },
+  "text_fields": {
+    "nota_propuesta_numero": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "codigo_sbs": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "ramo_seguro": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "referencia_propuesta": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "vigencia_inicio": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "vigencia_fin": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_nombre": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "contratante_doc": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "asegurado_nombre": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "asegurado_doc": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "materia_seguro": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "descripcion_riesgos_cubiertos": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "suma_asegurada": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "fecha_nota": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "agente_codigo": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "agente_nombre": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ]
+  },
+  "signature_fields": {},
+  "checkbox_groups": {}
+}

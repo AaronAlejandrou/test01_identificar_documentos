@@ -1,0 +1,204 @@
+{
+  "document_type": "page_02",
+  "template_version": "v1",
+  "identifiers": [
+    "Detalle del Producto",
+    "Detalle del prima",
+    "Declaración de Beneficiarios"
+  ],
+  "canonical": {
+    "width": 1654,
+    "height": 2339
+  },
+  "text_fields": {
+    "periodo_cobertura_anios": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "periodo_pago_anios": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "porcentaje_devolucion": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "capital_asegurado_principal": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "prima_principal": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "prima_fallecimiento_accidente": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "prima_comercial_anual": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "factor_pago": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "prima_comercial": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "igv": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "prima_total": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "agente_nombre": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "agente_codigo": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "agencia": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "origen_venta": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "beneficiario_1_nombre": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "beneficiario_1_porcentaje": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "beneficiario_2_nombre": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "beneficiario_2_porcentaje": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "benef_contingente_1_nombre": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "benef_contingente_1_porcentaje": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ]
+  },
+  "signature_fields": {},
+  "checkbox_groups": {
+    "periodo_cobertura_tipo": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "frecuencia_pago": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "tipo_riesgo": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "prima_moneda": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    }
+  }
+}

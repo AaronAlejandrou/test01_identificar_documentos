@@ -112,14 +112,13 @@ def crop_image(image: np.ndarray, bbox) -> np.ndarray:
 # PDF
 # ============================================================
 
-def render_pdf_first_page(pdf_path: str, target_width: int, target_height: int) -> Tuple[np.ndarray, fitz.Page]:
+def render_pdf_page(doc: fitz.Document, page_num: int, target_width: int, target_height: int) -> Tuple[np.ndarray, fitz.Page]:
     """
-    Renderiza la primera página del PDF y la devuelve como imagen BGR
+    Renderiza una página específica del PDF y la devuelve como imagen BGR
     ajustada exactamente al tamaño canónico.
     También devuelve el objeto Page para extracción de texto nativo.
     """
-    doc = fitz.open(pdf_path)
-    page = doc[0]
+    page = doc[page_num]
 
     # Render inicial usando una escala razonable
     pix = page.get_pixmap(alpha=False)
@@ -134,6 +133,11 @@ def render_pdf_first_page(pdf_path: str, target_width: int, target_height: int) 
     # Ajustar al tamaño canónico definido en el JSON
     img = cv2.resize(img, (target_width, target_height), interpolation=cv2.INTER_CUBIC)
     return img, page
+
+def render_pdf_first_page(pdf_path: str, target_width: int, target_height: int) -> Tuple[np.ndarray, fitz.Page]:
+    """Legacy wrapper for single page scripts."""
+    doc = fitz.open(pdf_path)
+    return render_pdf_page(doc, 0, target_width, target_height)
 
 
 def extract_pdf_native_text(page: fitz.Page, bbox_norm) -> str:
@@ -288,33 +292,20 @@ def build_empty_output() -> Dict[str, Any]:
     }
 
 
-def extract_document(pdf_path: str, config_path: str, output_path: str) -> Dict[str, Any]:
-    """
-    Función principal:
-    - abre PDF
-    - renderiza página 1
-    - extrae texto, radios y firmas
-    - guarda resultado.json
-    """
-    cfg = load_json(config_path)
-
-    canonical_w = int(cfg["canonical"]["width"])
-    canonical_h = int(cfg["canonical"]["height"])
-
-    page_image, page = render_pdf_first_page(pdf_path, canonical_w, canonical_h)
-    ocr_engine = create_ocr_engine()
-
-    result = build_empty_output()
-    result["source_file"] = pdf_path
+def extract_page_fields(page_image: np.ndarray, page: fitz.Page, cfg: Dict[str, Any], ocr_engine: PaddleOCR) -> Dict[str, Any]:
+    """Extrae los campos de una sola página (Worker)"""
+    result = {
+        "fields": {},
+        "checks": {},
+        "signatures": {}
+    }
 
     # --------------------------------------------------------
     # 1) CAMPOS DE TEXTO
     # --------------------------------------------------------
-    for field_name, bbox in cfg["text_fields"].items():
-        # Primero intenta leer texto nativo del PDF
+    for field_name, bbox in cfg.get("text_fields", {}).items():
         native_text = extract_pdf_native_text(page, bbox)
 
-        # Si no hay texto nativo, usa OCR en la ROI
         if native_text:
             final_text = native_text
             source = "pdf_native"
@@ -339,7 +330,7 @@ def extract_document(pdf_path: str, config_path: str, output_path: str) -> Dict[
     # --------------------------------------------------------
     # 2) RADIOS / CHECKS
     # --------------------------------------------------------
-    for group_name, group_cfg in cfg["checkbox_groups"].items():
+    for group_name, group_cfg in cfg.get("checkbox_groups", {}).items():
         selected, scores = detect_marked_option(page_image, group_cfg)
 
         result["checks"][group_name] = {
@@ -358,6 +349,32 @@ def extract_document(pdf_path: str, config_path: str, output_path: str) -> Dict[
             "present": present
         }
 
+    return result
+
+
+def extract_document(pdf_path: str, config_path: str, output_path: str, page_num: int = 0) -> Dict[str, Any]:
+    """
+    Wrapper legacy para compatibilidad con el flujo original:
+    - abre PDF
+    - renderiza la página especificada
+    - extrae texto, radios y firmas
+    - guarda resultado.json
+    """
+    cfg = load_json(config_path)
+
+    canonical_w = int(cfg["canonical"]["width"])
+    canonical_h = int(cfg["canonical"]["height"])
+
+    doc = fitz.open(pdf_path)
+    page_image, page = render_pdf_page(doc, page_num, canonical_w, canonical_h)
+    ocr_engine = create_ocr_engine()
+
+    result = build_empty_output()
+    result["source_file"] = pdf_path
+
+    page_result = extract_page_fields(page_image, page, cfg, ocr_engine)
+    result.update(page_result)
+
     # Guardar JSON final
     save_json(output_path, result)
     return result
@@ -372,12 +389,14 @@ def main():
     parser.add_argument("pdf", nargs="?", default=DEFAULT_INPUT, help="Ruta al PDF de entrada")
     parser.add_argument("--config", default=DEFAULT_CONFIG, help="Ruta al JSON de coordenadas")
     parser.add_argument("--output", default=DEFAULT_OUTPUT, help="Ruta del JSON de salida")
+    parser.add_argument("--page", type=int, default=1, help="Número de página (1-indexed)")
     args = parser.parse_args()
 
     result = extract_document(
         pdf_path=args.pdf,
         config_path=args.config,
-        output_path=args.output
+        output_path=args.output,
+        page_num=args.page - 1
     )
 
     print(json.dumps(result, ensure_ascii=False, indent=2))

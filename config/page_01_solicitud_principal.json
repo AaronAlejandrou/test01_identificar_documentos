@@ -1,0 +1,243 @@
+{
+  "document_type": "page_01",
+  "template_version": "v1",
+  "identifiers": [
+    "Solicitud de Seguro de Vida",
+    "Datos Personales del Asegurado",
+    "Datos Laborales del Asegurado"
+  ],
+  "canonical": {
+    "width": 1654,
+    "height": 2339
+  },
+  "text_fields": {
+    "propuesta_numero": [
+      0.812576,
+      0.003848,
+      0.935913,
+      0.026935
+    ],
+    "asegurado_apellido_paterno": [
+      0.047158,
+      0.173578,
+      0.165054,
+      0.185549
+    ],
+    "asegurado_apellido_materno": [
+      0.403869,
+      0.171441,
+      0.538089,
+      0.184694
+    ],
+    "asegurado_nombres": [
+      0.712213,
+      0.173578,
+      0.830109,
+      0.184694
+    ],
+    "asegurado_fecha_nacimiento_dia": [
+      0.093108,
+      0.208209,
+      0.136034,
+      0.223172
+    ],
+    "asegurado_fecha_nacimiento_mes": [
+      0.199516,
+      0.208209,
+      0.257557,
+      0.224455
+    ],
+    "asegurado_fecha_nacimiento_anio": [
+      0.336759,
+      0.209064,
+      0.438936,
+      0.224455
+    ],
+    "asegurado_numero_documento": [
+      0.463724,
+      0.207354,
+      0.538089,
+      0.223172
+    ],
+    "asegurado_nacionalidad": [
+      0.721282,
+      0.241129,
+      0.809553,
+      0.254382
+    ],
+    "asegurado_direccion": [
+      0.045949,
+      0.28944,
+      0.8289,
+      0.302693
+    ],
+    "asegurado_telefono_casa": [
+      0.048368,
+      0.312954,
+      0.257557,
+      0.325353
+    ],
+    "asegurado_celular": [
+      0.285973,
+      0.312954,
+      0.38029,
+      0.326208
+    ],
+    "asegurado_correo": [
+      0.516929,
+      0.313809,
+      0.830109,
+      0.325353
+    ],
+    "laboral_centro_trabajo": [
+      0.047158,
+      0.387345,
+      0.337364,
+      0.411714
+    ],
+    "laboral_actividad_economica": [
+      0.359129,
+      0.387345,
+      0.727932,
+      0.410859
+    ],
+    "laboral_ingreso_moneda": [
+      0.800484,
+      0.389055,
+      0.833736,
+      0.410859
+    ],
+    "laboral_ingreso_monto": [
+      0.860943,
+      0.390338,
+      0.929262,
+      0.407012
+    ],
+    "laboral_profesion_detalle": [
+      0.045345,
+      0.422403,
+      0.965538,
+      0.440359
+    ],
+    "contratante_nombre": [
+      0.706771,
+      0.553228,
+      0.971584,
+      0.567336
+    ],
+    "contratante_doc": [
+      0.451028,
+      0.587003,
+      0.600967,
+      0.604104
+    ]
+  },
+  "signature_fields": {},
+  "checkbox_groups": {
+    "moneda_solicitud": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.545345,
+          0.00342
+        ],
+        "Opcion2": [
+          0.993349,
+          0.99658
+        ]
+      }
+    },
+    "producto_plan": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.25393,
+          0.109876
+        ],
+        "Opcion2": [
+          0.421403,
+          0.109876
+        ]
+      }
+    },
+    "asegurado_tipo_documento": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.573761,
+          0.203078
+        ],
+        "Opcion2": [
+          0.663241,
+          0.200086
+        ]
+      }
+    },
+    "asegurado_sexo": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.833132,
+          0.218897
+        ],
+        "Opcion2": [
+          0.948609,
+          0.217187
+        ]
+      }
+    },
+    "asegurado_estado_civil": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.130593,
+          0.249679
+        ],
+        "Opcion2": [
+          0.234583,
+          0.249679
+        ]
+      }
+    },
+    "asegurado_pep": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.075574,
+          0.35186
+        ],
+        "Opcion2": [
+          0.288392,
+          0.351005
+        ]
+      }
+    },
+    "asegurado_sujeto_obligado": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.498186,
+          0.351005
+        ],
+        "Opcion2": [
+          0.547158,
+          0.35186
+        ]
+      }
+    }
+  }
+}

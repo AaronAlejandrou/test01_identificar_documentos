@@ -1,0 +1,48 @@
+CANONICAL_SIZE = 1654x2339
+
+[TEXT_FIELDS]
+propuesta_numero: norm=[0.812576, 0.003848, 0.935913, 0.026935] px=(1344, 9, 1548, 63)
+asegurado_apellido_paterno: norm=[0.047158, 0.173578, 0.165054, 0.185549] px=(78, 406, 273, 434)
+asegurado_apellido_materno: norm=[0.403869, 0.171441, 0.538089, 0.184694] px=(668, 401, 890, 432)
+asegurado_nombres: norm=[0.712213, 0.173578, 0.830109, 0.184694] px=(1178, 406, 1373, 432)
+asegurado_fecha_nacimiento_dia: norm=[0.093108, 0.208209, 0.136034, 0.223172] px=(154, 487, 225, 522)
+asegurado_fecha_nacimiento_mes: norm=[0.199516, 0.208209, 0.257557, 0.224455] px=(330, 487, 426, 525)
+asegurado_fecha_nacimiento_anio: norm=[0.336759, 0.209064, 0.438936, 0.224455] px=(557, 489, 726, 525)
+asegurado_numero_documento: norm=[0.463724, 0.207354, 0.538089, 0.223172] px=(767, 485, 890, 522)
+asegurado_nacionalidad: norm=[0.720073, 0.239419, 0.830109, 0.257375] px=(1191, 560, 1373, 602)
+asegurado_direccion: norm=[0.045949, 0.28944, 0.8289, 0.302693] px=(76, 677, 1371, 708)
+asegurado_telefono_casa: norm=[0.048368, 0.312954, 0.257557, 0.325353] px=(80, 732, 426, 761)
+asegurado_celular: norm=[0.285973, 0.312954, 0.38029, 0.326208] px=(473, 732, 629, 763)
+asegurado_correo: norm=[0.516929, 0.313809, 0.830109, 0.325353] px=(855, 734, 1373, 761)
+laboral_centro_trabajo: norm=[0.047158, 0.387345, 0.337364, 0.411714] px=(78, 906, 558, 963)
+laboral_actividad_economica: norm=[0.359129, 0.387345, 0.727932, 0.410859] px=(594, 906, 1204, 961)
+laboral_ingreso_moneda: norm=[0.800484, 0.389055, 0.833736, 0.410859] px=(1324, 910, 1379, 961)
+laboral_ingreso_monto: norm=[0.860943, 0.390338, 0.929262, 0.407012] px=(1424, 913, 1537, 952)
+laboral_profesion_detalle: norm=[0.045345, 0.422403, 0.965538, 0.440359] px=(75, 988, 1597, 1030)
+contratante_nombre: norm=[0.706771, 0.553228, 0.971584, 0.567336] px=(1169, 1294, 1607, 1327)
+contratante_doc: norm=[0.451028, 0.587003, 0.600967, 0.604104] px=(746, 1373, 994, 1413)
+
+[SIGNATURE_FIELDS]
+
+[CHECKBOX_GROUPS]
+moneda_solicitud: radius_norm=0.008 inner_radius_norm=0.005
+  Opcion1: norm=(0.545345, 0.00342) px=(902, 8)
+  Opcion2: norm=(0.993349, 0.99658) px=(1643, 2331)
+producto_plan: radius_norm=0.008 inner_radius_norm=0.005
+  Opcion1: norm=(0.25393, 0.109876) px=(420, 257)
+  Opcion2: norm=(0.421403, 0.109876) px=(697, 257)
+asegurado_tipo_documento: radius_norm=0.008 inner_radius_norm=0.005
+  Opcion1: norm=(0.573761, 0.203078) px=(949, 475)
+  Opcion2: norm=(0.663241, 0.200086) px=(1097, 468)
+asegurado_sexo: radius_norm=0.008 inner_radius_norm=0.005
+  Opcion1: norm=(0.833132, 0.218897) px=(1378, 512)
+  Opcion2: norm=(0.948609, 0.217187) px=(1569, 508)
+asegurado_estado_civil: radius_norm=0.008 inner_radius_norm=0.005
+  Opcion1: norm=(0.130593, 0.249679) px=(216, 584)
+  Opcion2: norm=(0.234583, 0.249679) px=(388, 584)
+asegurado_pep: radius_norm=0.008 inner_radius_norm=0.005
+  Opcion1: norm=(0.075574, 0.35186) px=(125, 823)
+  Opcion2: norm=(0.288392, 0.351005) px=(477, 821)
+asegurado_sujeto_obligado: radius_norm=0.008 inner_radius_norm=0.005
+  Opcion1: norm=(0.498186, 0.351005) px=(824, 821)
+  Opcion2: norm=(0.547158, 0.35186) px=(905, 823)

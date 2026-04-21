@@ -1,0 +1,242 @@
+{
+  "document_type": "page_03",
+  "template_version": "v1",
+  "identifiers": [
+    "DECLARACIÓN PERSONAL DE SALUD",
+    "Información Adicional del Asegurado"
+  ],
+  "canonical": {
+    "width": 1654,
+    "height": 2339
+  },
+  "text_fields": {
+    "estatura": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "peso": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "cuanto_kg": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "fuma_detalle": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "drogas_fecha": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "alcohol_detalle": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "info_adicional_a_e": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "salud_detalle_1": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "salud_detalle_2": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "info_adicional_detalle_1": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ]
+  },
+  "signature_fields": {},
+  "checkbox_groups": {
+    "variacion_peso": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "aumento_disminucion": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "fuma": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "drogas": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "alcohol": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "salud_pregunta_1": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "salud_pregunta_2": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "salud_pregunta_3": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "salud_pregunta_4": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "salud_pregunta_5": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "salud_pregunta_6": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    }
+  }
+}

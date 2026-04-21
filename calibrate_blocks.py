@@ -24,11 +24,11 @@ def save_config(path: str, cfg: Dict[str, Any]) -> None:
         json.dump(cfg, f, ensure_ascii=False, indent=2)
 
 
-def render_first_page(file_path: str, dpi: int, canonical_w: int, canonical_h: int) -> np.ndarray:
+def render_page(file_path: str, page_num: int, dpi: int, canonical_w: int, canonical_h: int) -> np.ndarray:
     p = Path(file_path)
     if p.suffix.lower() == ".pdf":
         doc = fitz.open(file_path)
-        page = doc.load_page(0)
+        page = doc.load_page(page_num)
         zoom = dpi / 72.0
         mat = fitz.Matrix(zoom, zoom)
         pix = page.get_pixmap(matrix=mat, alpha=False)
@@ -220,12 +220,13 @@ def main():
     ap.add_argument("--config", default="config/form_blocks_interseguro.json", help="Ruta al JSON a editar")
     ap.add_argument("--mode", choices=["text", "sign", "radio"], required=True, help="Modo de calibración")
     ap.add_argument("--dpi", type=int, default=200, help="DPI de render si es PDF")
+    ap.add_argument("--page", type=int, default=1, help="Número de página a calibrar (1-indexed)")
     args = ap.parse_args()
 
     cfg = load_config(args.config)
     can_w = int(cfg["canonical"]["width"])
     can_h = int(cfg["canonical"]["height"])
-    image = render_first_page(args.input, args.dpi, can_w, can_h)
+    image = render_page(args.input, args.page - 1, args.dpi, can_w, can_h)
 
     if args.mode == "text":
         editor = BoxCalibrator(image, cfg, "text_fields")

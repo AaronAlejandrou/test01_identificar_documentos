@@ -1,0 +1,88 @@
+{
+  "document_type": "page_07",
+  "template_version": "v1",
+  "identifiers": [
+    "Política de Privacidad",
+    "Consentimiento para Tratamiento de Datos Personales",
+    "Monto a pagar"
+  ],
+  "canonical": {
+    "width": 1654,
+    "height": 2339
+  },
+  "text_fields": {
+    "fecha_suscripcion": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "monto_pagar": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ]
+  },
+  "signature_fields": {
+    "firma_contratante_presente": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "firma_asegurado_presente": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ]
+  },
+  "checkbox_groups": {
+    "privacidad_contratante_opcional": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "privacidad_asegurado_opcional": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "monto_pagar_moneda": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    }
+  }
+}

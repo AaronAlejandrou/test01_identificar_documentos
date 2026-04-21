@@ -1,0 +1,157 @@
+{
+  "source_file": "SolicitudDigital_72726293_502821974.pdf",
+  "fields": {
+    "propuesta_numero": {
+      "value": "502821974",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "asegurado_apellido_paterno": {
+      "value": "Apellido Paterno RAMIREZ",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "asegurado_apellido_materno": {
+      "value": "Apellido Materno CONDORCHOA",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "asegurado_nombres": {
+      "value": "Nombres LLONA DAISY",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "asegurado_fecha_nacimiento_dia": {
+      "value": "0 5",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "asegurado_fecha_nacimiento_mes": {
+      "value": "0 5",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "asegurado_fecha_nacimiento_anio": {
+      "value": "1 9 9 2",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "asegurado_numero_documento": {
+      "value": "72726293",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "asegurado_nacionalidad": {
+      "value": "PERUANO",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "asegurado_direccion": {
+      "value": "Domicilio: Jr. Av. Calle Pje. JIRÓN TACNA PASAJE SR DE LOS MILAGROS 135 - . - . - COMAS - LIMA - LIMA",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "asegurado_telefono_casa": {
+      "value": "Teléfono Casa",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "asegurado_celular": {
+      "value": "Celular 907955150",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "asegurado_correo": {
+      "value": "llona050592@gmail.com",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "laboral_centro_trabajo": {
+      "value": "Centro de Trabajo ESSALUD",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "laboral_actividad_economica": {
+      "value": "Actividad Económica OTRAS ACTIVIDADES DE ATENCIÓN DE LA SALUD HUMANA",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "laboral_ingreso_moneda": {
+      "value": "US $",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "laboral_ingreso_monto": {
+      "value": "5,000",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "laboral_profesion_detalle": {
+      "value": "Profesión/ Detalle de labor específica que desarrolla ENFERMERO / ATENCION A PACIENTES",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "contratante_nombre": {
+      "value": "Nombres",
+      "source": "pdf_native",
+      "confidence": 1.0
+    },
+    "contratante_doc": {
+      "value": "",
+      "source": "empty",
+      "confidence": 0.0
+    }
+  },
+  "checks": {
+    "moneda_solicitud": {
+      "selected": null,
+      "scores": {
+        "Opcion1": 0.0,
+        "Opcion2": 0.0
+      }
+    },
+    "producto_plan": {
+      "selected": "Opcion2",
+      "scores": {
+        "Opcion1": 0.2538,
+        "Opcion2": 0.8071
+      }
+    },
+    "asegurado_tipo_documento": {
+      "selected": "Opcion1",
+      "scores": {
+        "Opcion1": 0.9949,
+        "Opcion2": 0.2284
+      }
+    },
+    "asegurado_sexo": {
+      "selected": "Opcion2",
+      "scores": {
+        "Opcion1": 0.203,
+        "Opcion2": 0.7462
+      }
+    },
+    "asegurado_estado_civil": {
+      "selected": "Opcion1",
+      "scores": {
+        "Opcion1": 0.8579,
+        "Opcion2": 0.2183
+      }
+    },
+    "asegurado_pep": {
+      "selected": "Opcion2",
+      "scores": {
+        "Opcion1": 0.1827,
+        "Opcion2": 0.8579
+      }
+    },
+    "asegurado_sujeto_obligado": {
+      "selected": "Opcion2",
+      "scores": {
+        "Opcion1": 0.2132,
+        "Opcion2": 0.9848
+      }
+    }
+  },
+  "signatures": {}
+}

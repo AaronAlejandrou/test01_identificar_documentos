@@ -20,18 +20,18 @@ def load_config(path: str) -> Dict[str, Any]:
         return json.load(f)
 
 
-def render_first_page(file_path: str, dpi: int, canonical_w: int, canonical_h: int) -> np.ndarray:
+def render_page(file_path: str, page_num: int, dpi: int, canonical_w: int, canonical_h: int) -> np.ndarray:
     """
     Abre un PDF o imagen y lo devuelve como imagen BGR normalizada al tamaño canónico.
 
-    - Si es PDF: renderiza la primera página con PyMuPDF.
+    - Si es PDF: renderiza la página especificada con PyMuPDF.
     - Si es imagen: la abre y la redimensiona.
     """
     p = Path(file_path)
 
     if p.suffix.lower() == ".pdf":
         doc = fitz.open(file_path)
-        page = doc.load_page(0)
+        page = doc.load_page(page_num)
         zoom = dpi / 72.0
         mat = fitz.Matrix(zoom, zoom)
         pix = page.get_pixmap(matrix=mat, alpha=False)
@@ -130,13 +130,14 @@ def main() -> None:
     ap.add_argument("--dpi", type=int, default=200, help="DPI al renderizar PDF")
     ap.add_argument("--output", default="overlay_debug.png", help="Nombre de la imagen overlay de salida")
     ap.add_argument("--ranges", default="ranges_debug.txt", help="Nombre del TXT de rangos")
+    ap.add_argument("--page", type=int, default=1, help="Número de página a inspeccionar (1-indexed)")
     args = ap.parse_args()
 
     cfg = load_config(args.config)
     can_w = int(cfg["canonical"]["width"])
     can_h = int(cfg["canonical"]["height"])
 
-    img = render_first_page(args.input, args.dpi, can_w, can_h)
+    img = render_page(args.input, args.page - 1, args.dpi, can_w, can_h)
     overlay = draw_overlay(img, cfg)
 
     cv2.imwrite(args.output, overlay)

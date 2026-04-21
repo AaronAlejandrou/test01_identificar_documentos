@@ -1,0 +1,65 @@
+{
+  "document_type": "page_04",
+  "template_version": "v1",
+  "identifiers": [
+    "Declaración Adicional de labor",
+    "ACUERDOS ENTRE LA COMPAÑÍA"
+  ],
+  "canonical": {
+    "width": 1654,
+    "height": 2339
+  },
+  "text_fields": {
+    "detalle_labor": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "fecha_firma_texto": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ],
+    "agente_nombre_firma": [
+      0.0,
+      0.0,
+      0.1,
+      0.1
+    ]
+  },
+  "signature_fields": {},
+  "checkbox_groups": {
+    "labor_arquitectura_obra_modalidad": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "labor_electricidad_modalidad": {
+      "radius_norm": 0.008,
+      "inner_radius_norm": 0.005,
+      "mark_threshold": 0.15,
+      "options": {
+        "Opcion1": [
+          0.0,
+          0.0
+        ],
+        "Opcion2": [
+          0.1,
+          0.0
+        ]
+      }
+    }
+  }
+}
