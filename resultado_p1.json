@@ -14,8 +14,8 @@
       "confidence": 1.0
     },
     "asegurado_apellido_materno": {
-      "value": "p CONDORCHOA",
-      "raw_value": "p CONDORCHOA",
+      "value": "CONDORCHOA",
+      "raw_value": "CONDORCHOA",
       "source": "pdf_native",
       "confidence": 1.0
     },
