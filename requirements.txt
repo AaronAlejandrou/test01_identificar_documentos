@@ -5,3 +5,6 @@ numpy
 paddlepaddle
 paddleocr
 PySide6
+fastapi
+uvicorn
+python-multipart

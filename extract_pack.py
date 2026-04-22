@@ -56,6 +56,7 @@ def consolidate_results(pages_results: List[Dict[str, Any]]) -> Dict[str, Any]:
         "fields": {},
         "checks": {},
         "signatures": {},
+        "tables": {},
         "validations": []
     }
     
@@ -83,6 +84,11 @@ def consolidate_results(pages_results: List[Dict[str, Any]]) -> Dict[str, Any]:
             if v.get("present"):
                 consolidated["signatures"][k] = v
                 field_sources[k].append({"page": page_num, "value": v.get("present")})
+                
+        # Merge tables
+        for k, v in page_res["data"].get("tables", {}).items():
+            if v:
+                consolidated["tables"][k] = v
                 
     # ==========================================
     # APLICACIÓN DE REGLAS DE NEGOCIO
@@ -161,7 +167,31 @@ def consolidate_results(pages_results: List[Dict[str, Any]]) -> Dict[str, Any]:
     return consolidated
 
 
-def process_pack(pdf_path: str, profile_path: str, output_path: str):
+def generate_clean_json(consolidated: Dict[str, Any]) -> Dict[str, Any]:
+    """Genera una versión aplanada/limpia con solo los valores finales."""
+    clean = {
+        "fields": {},
+        "checks": {},
+        "signatures": {},
+        "tables": {}
+    }
+    for k, v in consolidated.get("fields", {}).items():
+        clean["fields"][k] = v.get("value")
+        
+    for k, v in consolidated.get("checks", {}).items():
+        clean["checks"][k] = v.get("selected")
+        
+    for k, v in consolidated.get("signatures", {}).items():
+        clean["signatures"][k] = v.get("present")
+        
+    # Las tablas ya son arrays planos de valores (descartando ruido)
+    for k, v in consolidated.get("tables", {}).items():
+        clean["tables"][k] = v
+        
+    return clean
+
+
+def process_pack(pdf_path: str, profile_path: str, output_path: str = None, ocr_engine=None):
     profile = load_json(profile_path)
     base_dir = os.path.dirname(profile_path)
     
@@ -174,7 +204,8 @@ def process_pack(pdf_path: str, profile_path: str, output_path: str):
             print(f"Advertencia: No se encontró la plantilla {tmpl_path}")
             
     doc = fitz.open(pdf_path)
-    ocr_engine = create_ocr_engine()
+    if ocr_engine is None:
+        ocr_engine = create_ocr_engine()
     
     pages_results = []
     
@@ -205,16 +236,21 @@ def process_pack(pdf_path: str, profile_path: str, output_path: str):
         })
         
     print("\nConsolidando resultados y aplicando validaciones...")
+    consol = consolidate_results(pages_results)
     final_json = {
         "document_type": profile.get("document_type", "unknown"),
         "source_file": pdf_path,
         "pages_processed": len(pages_results),
-        "consolidated": consolidate_results(pages_results),
+        "consolidated": consol,
+        "clean_data": generate_clean_json(consol),
         "pages_raw": pages_results
     }
     
-    save_json(output_path, final_json)
-    print(f"Listo. Resultados guardados en {output_path}")
+    if output_path:
+        save_json(output_path, final_json)
+        print(f"Listo. Resultados guardados en {output_path}")
+
+    return final_json
 
 
 def main():

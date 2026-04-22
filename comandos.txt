@@ -6,6 +6,7 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 
 validar que paddle funciona sino gg
+
 $env:PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK="True"
 
 NOMBRE_DEL_JSON = dentro de la carpeta /config esta por paginas asi que cambio el N por el nro de la pagina
