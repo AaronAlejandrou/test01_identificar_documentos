@@ -1,8 +1,29 @@
-python inspect_blocks.py "sac-formulario-de-ingreso-de-solicitudes.pdf" --config config/form_blocks_interseguro.json --output overlay.png --ranges rangos.txt
+cd "C:\Users\Roandrinho\Documents\test01_identificar_documentos"
 
-python calibrate_blocks.py "sac-formulario-de-ingreso-de-solicitudes.pdf" --config config/form_blocks_interseguro.json --mode text
+python -m venv venv
+.\venv\Scripts\activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
 
-sign
-radio
+validar que paddle funciona sino gg
+$env:PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK="True"
 
-python extract_local.py "sac-formulario-de-ingreso-de-solicitudes.pdf" --config "config/form_blocks_interseguro.json" --output "resultado.json"
+NOMBRE_DEL_JSON = dentro de la carpeta /config esta por paginas asi que cambio el N por el nro de la pagina
+
+Paso A. Calibrar textos
+python calibrate_blocks.py "SolicitudDigital_72726293_502821974.pdf" --config config/NOMBRE_DEL_JSON.json --mode text --page N
+
+Paso B. Calibrar radios
+python calibrate_blocks.py "SolicitudDigital_72726293_502821974.pdf" --config config/NOMBRE_DEL_JSON.json --mode radio --page N
+
+Paso C. Inspeccionar resultado visual
+python inspect_blocks.py "SolicitudDigital_72726293_502821974.pdf" --config config/NOMBRE_DEL_JSON.json --page N --output overlay_pN_final.png
+
+Paso D. Extraer JSON de esa página
+python extract_local.py "SolicitudDigital_72726293_502821974.pdf" --config config/NOMBRE_DEL_JSON.json --page N --output resultado_pN.json
+
+
+python calibrate_blocks.py "SolicitudDigital_72726293_502821974.pdf" --config config/page_01_solicitud_principal.json --mode text --page 1
+python calibrate_blocks.py "SolicitudDigital_72726293_502821974.pdf" --config config/page_01_solicitud_principal.json --mode radio --page 1
+python inspect_blocks.py "SolicitudDigital_72726293_502821974.pdf" --config config/page_01_solicitud_principal.json --page 1 --output overlay_p1_final.png
+python extract_local.py "SolicitudDigital_72726293_502821974.pdf" --config config/page_01_solicitud_principal.json --page 1 --output resultado_p1.json
