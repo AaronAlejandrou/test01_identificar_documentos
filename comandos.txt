@@ -27,3 +27,8 @@ python calibrate_blocks.py "SolicitudDigital_72726293_502821974.pdf" --config co
 python calibrate_blocks.py "SolicitudDigital_72726293_502821974.pdf" --config config/page_01_solicitud_principal.json --mode radio --page 1
 python inspect_blocks.py "SolicitudDigital_72726293_502821974.pdf" --config config/page_01_solicitud_principal.json --page 1 --output overlay_p1_final.png
 python extract_local.py "SolicitudDigital_72726293_502821974.pdf" --config config/page_01_solicitud_principal.json --page 1 --output resultado_p1.json
+
+python calibrate_blocks.py "SolicitudDigital_72726293_502821974.pdf" --config config/page_02_producto_beneficiarios.json --mode text --page 2
+python calibrate_blocks.py "SolicitudDigital_72726293_502821974.pdf" --config config/page_02_producto_beneficiarios.json --mode radio --page 2
+python inspect_blocks.py "SolicitudDigital_72726293_502821974.pdf" --config config/page_02_producto_beneficiarios.json --page 2 --output overlay_p2_final.png
+python extract_local.py "SolicitudDigital_72726293_502821974.pdf" --config config/page_02_producto_beneficiarios.json --page 2 --output resultado_p2.json

@@ -56,8 +56,8 @@
       "confidence": 1.0
     },
     "asegurado_direccion": {
-      "value": "j JIRÓN TACNA PASAJE SR DE LOS MILAGROS 135 - . - . - COMAS - LIMA - LIMA",
-      "raw_value": "j JIRÓN TACNA PASAJE SR DE LOS MILAGROS 135 - . - . - COMAS - LIMA - LIMA",
+      "value": "JIRÓN TACNA PASAJE SR DE LOS MILAGROS 135 - . - . - COMAS - LIMA - LIMA",
+      "raw_value": "JIRÓN TACNA PASAJE SR DE LOS MILAGROS 135 - . - . - COMAS - LIMA - LIMA",
       "source": "pdf_native",
       "confidence": 1.0
     },
@@ -80,8 +80,8 @@
       "confidence": 1.0
     },
     "laboral_centro_trabajo": {
-      "value": "j ESSALUD",
-      "raw_value": "j ESSALUD",
+      "value": "ESSALUD",
+      "raw_value": "ESSALUD",
       "source": "pdf_native",
       "confidence": 1.0
     },
@@ -98,8 +98,8 @@
       "confidence": 1.0
     },
     "laboral_profesion_detalle": {
-      "value": "p q ENFERMERO / ATENCION A PACIENTES",
-      "raw_value": "p q ENFERMERO / ATENCION A PACIENTES",
+      "value": "ENFERMERO / ATENCION A PACIENTES",
+      "raw_value": "ENFERMERO / ATENCION A PACIENTES",
       "source": "pdf_native",
       "confidence": 1.0
     },
@@ -122,16 +122,16 @@
       "confidence": 0.0
     },
     "contratante_razon_social": {
-      "value": "( )",
-      "raw_value": "( )",
-      "source": "pdf_native",
-      "confidence": 1.0
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
     },
     "contratante_apellido_paterno": {
-      "value": "p",
-      "raw_value": "p",
-      "source": "pdf_native",
-      "confidence": 1.0
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
     },
     "contratante_apellido_materno": {
       "value": "p",
@@ -164,10 +164,10 @@
       "confidence": 0.0
     },
     "contratante_direccion": {
-      "value": "j",
-      "raw_value": "j",
-      "source": "pdf_native",
-      "confidence": 1.0
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
     },
     "contratante_telefono_casa": {
       "value": "",
@@ -188,10 +188,10 @@
       "confidence": 0.0
     },
     "contratante_laboral_centro_trabajo": {
-      "value": "j",
-      "raw_value": "j",
-      "source": "pdf_native",
-      "confidence": 1.0
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
     },
     "contratante_laboral_actividad_economica": {
       "value": "",
@@ -206,10 +206,10 @@
       "confidence": 0.0
     },
     "contratante_laboral_profesion_detalle": {
-      "value": "p q",
-      "raw_value": "p q",
-      "source": "pdf_native",
-      "confidence": 1.0
+      "value": "",
+      "raw_value": "",
+      "source": "empty",
+      "confidence": 0.0
     },
     "laboral_direccion": {
       "value": ". . e .",
@@ -230,8 +230,8 @@
       "confidence": 0.0
     },
     "contratante_laboral_direccion": {
-      "value": ". . e j .",
-      "raw_value": ". . e j .",
+      "value": ". . e .",
+      "raw_value": ". . e .",
       "source": "pdf_native",
       "confidence": 1.0
     },
@@ -355,7 +355,7 @@
     "contratante_direccion_tipo_via": {
       "selected": "Av",
       "scores": {
-        "Jr": 0.2589,
+        "Jr": 0.198,
         "Av": 0.2741,
         "Calle": 0.2487,
         "Pje": 0.2284
