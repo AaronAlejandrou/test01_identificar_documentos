@@ -4,3 +4,7 @@ pillow
 numpy
 paddlepaddle
 paddleocr
+fastapi
+uvicorn
+python-multipart
+pydantic-settings

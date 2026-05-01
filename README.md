@@ -1,44 +1,56 @@
-# Sistema de Extracción Multipágina y Multiplantilla
+# API de Extracción y Calibración de Documentos
 
-Versión local, diseñada para extraer información de paquetes documentales en PDF (ej. Solicitud Digital de Vida, Anexos, Privacidad, etc.).
+Backend moderno construido con **FastAPI** para la extracción estructurada de datos de PDFs y el soporte asistido por IA para calibrar y crear plantillas de documentos desde un frontend ("Studio").
 
-## Arquitectura
+## Arquitectura del Proyecto
 
-El sistema ha sido adaptado para soportar PDFs de múltiples páginas con diferentes formatos:
+```text
+test01_identificar_documentos/
+├── app/               # Lógica de la API (Modelos, Rutas y Servicios de IA/Extracción)
+├── config/            # JSONs maestros y plantillas hijas de los documentos
+├── data/              # Directorio autogenerado para uploads temporales y JSON extraídos
+├── samples/           # PDFs de prueba
+└── venv/              # Entorno Virtual de Python
+```
 
-1. **Perfil de Documento**: (`config/document_profile_*.json`) Define la "familia" del PDF, sus plantillas y palabras clave globales.
-2. **Plantilla por Página**: (ej. `config/page_01_solicitud_principal.json`) Archivos JSON independientes con los campos, firmas y radios a extraer para esa página específica.
-3. **Orquestador (`extract_pack.py`)**: Recorre todas las páginas, detecta automáticamente la plantilla aplicable mediante extracción de texto y consolida los resultados (con validaciones cruzadas).
-4. **Worker (`extract_local.py`)**: Encargado de la extracción física sobre una sola página renderizada.
-
-## Instalación simple
-```bash
+## Requisitos y Dependencias
+Asegúrate de que las dependencias estén instaladas en tu entorno virtual:
+```powershell
+.\venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Flujo de Trabajo (Para Nuevos Documentos)
+## Comandos para Iniciar la API
 
-### 1. Generar la Plantilla (Ya provista)
-Si agregas un nuevo documento, crea el perfil y los JSON de sus páginas en `config/`. (Actualmente ya existen las configuraciones en `[0,0,0.1,0.1]` para Solicitud Digital).
+Para levantar el servidor de la API, debes ejecutar estos comandos en tu terminal de **PowerShell**. 
+*(Asegúrate de estar ubicado en la carpeta `test01_identificar_documentos`)*:
 
-### 2. Inspeccionar Página
-Usa `inspect_blocks.py` indicando qué página y qué JSON de plantilla quieres revisar:
-```bash
-python inspect_blocks.py "tu_paquete.pdf" --config config/page_01_solicitud_principal.json --page 1 --output overlay_p1.png
+```powershell
+# 1. Activar el entorno virtual
+.\venv\Scripts\activate
+
+# 2. Levantar el servidor FastAPI
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-### 3. Calibrar por Página (Importante)
-Ajusta las coordenadas de los campos para que coincidan con tu PDF real. Tienes que hacerlo por cada página.
-```bash
-python calibrate_blocks.py "tu_paquete.pdf" --config config/page_01_solicitud_principal.json --mode text --page 1
-python calibrate_blocks.py "tu_paquete.pdf" --config config/page_01_solicitud_principal.json --mode radio --page 1
-python calibrate_blocks.py "tu_paquete.pdf" --config config/page_01_solicitud_principal.json --mode sign --page 1
-```
-*(Repite el proceso para `--page 2` con `page_02_producto_beneficiarios.json`, etc.)*
+Una vez que el servidor inicie, abre tu navegador y visita:
+👉 **[http://localhost:8000/docs](http://localhost:8000/docs)**
 
-### 4. Extraer Paquete Completo
-Una vez que todas las plantillas están calibradas, ejecuta el orquestador general:
-```bash
-python extract_pack.py "tu_paquete.pdf" --profile config/document_profile_solicitud_digital.json --output resultado_consolidado.json
-```
-Esto procesará las páginas, aplicará las validaciones (ver `validations` en el JSON final) y entregará todos los datos organizados.
+Allí encontrarás la interfaz interactiva de Swagger UI donde puedes probar cada endpoint.
+
+## Resumen de Endpoints
+
+### 1. Documentos y Studio (Calibración)
+- **`POST /api/documents/split`**: Recibe un PDF y genera imágenes PNG de alta resolución por cada página. Devuelve URLs estáticas para usar en tu Frontend Canvas.
+- **`POST /api/ai/detect/{document_id}/{page_index}`**: Escanea una imagen específica mediante OCR (PaddleOCR) y heurísticas, retornando una lista de "bounding boxes" sugeridos para textos y posibles checkboxes.
+
+### 2. Configuración y Perfiles
+- **`GET /api/config`**: Lista todos los perfiles disponibles.
+- **`GET /api/config/{filename}`**: Obtiene el JSON específico para renderizarlo o editarlo en el Frontend.
+- **`POST /api/config/profile`**: Guarda un "Perfil Maestro" junto con todas sus plantillas de página. Ideal para cuando el usuario finaliza la calibración en el Studio.
+- **`PUT /api/config/{filename}`**: Sobrescribe un archivo de configuración específico.
+
+### 3. Runner y Extracción Operativa
+- **`POST /api/extractions/run`**: Toma un PDF y un Perfil, invoca al motor de extracción, valida las reglas cruzadas y retorna la data extraída en memoria temporal.
+- **`POST /api/extractions/save`**: Toma la data final (incluso si fue modificada manualmente por el usuario en el UI) y la guarda como un archivo histórico en el sistema.
+- **`GET /api/extractions/{id}`**: Consulta un resultado de extracción previo.
