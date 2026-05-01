@@ -7,7 +7,4 @@ paddleocr
 fastapi
 uvicorn
 python-multipart
-pydantic-settingsPySide6
-fastapi
-uvicorn
-python-multipart
+pydantic-settings

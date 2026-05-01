@@ -167,7 +167,7 @@ def consolidate_results(pages_results: List[Dict[str, Any]]) -> Dict[str, Any]:
     return consolidated
 
 
-def process_pack(pdf_path: str, profile_path: str, output_path: str):
+def process_pack(pdf_path: str, profile_path: str, output_path: Optional[str] = None):
     profile = load_json(profile_path)
     base_dir = os.path.dirname(profile_path)
     
@@ -180,8 +180,7 @@ def process_pack(pdf_path: str, profile_path: str, output_path: str):
             print(f"Advertencia: No se encontró la plantilla {tmpl_path}")
             
     doc = fitz.open(pdf_path)
-    if ocr_engine is None:
-        ocr_engine = create_ocr_engine()
+    ocr_engine = create_ocr_engine()
     
     pages_results = []
     
@@ -218,12 +217,12 @@ def process_pack(pdf_path: str, profile_path: str, output_path: str):
         "source_file": pdf_path,
         "pages_processed": len(pages_results),
         "consolidated": consol,
-        "clean_data": generate_clean_json(consol),
         "pages_raw": pages_results
     }
     
-    save_json(output_path, final_json)
-    print(f"Listo. Resultados guardados en {output_path}")
+    if output_path:
+        save_json(output_path, final_json)
+        print(f"Listo. Resultados guardados en {output_path}")
 
     return final_json
 
