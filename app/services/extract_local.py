@@ -282,13 +282,52 @@ def detect_ink_presence(roi: np.ndarray) -> bool:
 # EXTRACCIÓN
 # ============================================================
 
+def extract_tables_from_fields(fields_dict: Dict[str, Any]) -> Dict[str, list]:
+    """
+    Agrupa campos con nombres como 'tabla_0_columna' en un array de diccionarios.
+    Elimina filas completamente vacías.
+    """
+    tables = {}
+    pattern = re.compile(r"^([^0-9]+)_(\d+)_(.+)$")
+    temp_data = {}
+    
+    for key, val_obj in fields_dict.items():
+        m = pattern.match(key)
+        if m:
+            table_name = m.group(1).rstrip("_")
+            row_idx = int(m.group(2))
+            col_name = m.group(3)
+            
+            if table_name not in temp_data:
+                temp_data[table_name] = {}
+            if row_idx not in temp_data[table_name]:
+                temp_data[table_name][row_idx] = {"_empty": True}
+                
+            value = val_obj["value"]
+            if value:
+                temp_data[table_name][row_idx]["_empty"] = False
+                
+            temp_data[table_name][row_idx][col_name] = value
+
+    for table_name, rows_dict in temp_data.items():
+        tables[table_name] = []
+        for r_idx in sorted(rows_dict.keys()):
+            row_data = rows_dict[r_idx]
+            is_empty = row_data.pop("_empty")
+            if not is_empty:
+                tables[table_name].append(row_data)
+
+    return tables
+
+
 def build_empty_output() -> Dict[str, Any]:
     """Plantilla base de salida."""
     return {
         "source_file": DEFAULT_INPUT,
         "fields": {},
         "checks": {},
-        "signatures": {}
+        "signatures": {},
+        "tables": {}
     }
 
 
@@ -297,7 +336,8 @@ def extract_page_fields(page_image: np.ndarray, page: fitz.Page, cfg: Dict[str, 
     result = {
         "fields": {},
         "checks": {},
-        "signatures": {}
+        "signatures": {},
+        "tables": {}
     }
 
     cleanup_cfg = cfg.get("cleanup_rules", {})
@@ -324,6 +364,18 @@ def extract_page_fields(page_image: np.ndarray, page: fitz.Page, cfg: Dict[str, 
         if field_name in cleanup_cfg:
             for rule in cleanup_cfg[field_name]:
                 clean_val = clean_val.replace(rule, "")
+                
+        # Limpieza específica robusta para page_02 y otras con regex
+        if "periodo_pago_anios" in field_name:
+            clean_val = re.sub(r"(?i)periodo\s+pago\s*", "", clean_val)
+        elif "prima_comercial_anual" in field_name:
+            clean_val = re.sub(r"(?i)prima\s+comercial\s+anual\s*", "", clean_val)
+        elif "agente_nombre" in field_name:
+            clean_val = re.sub(r"(?i)^agente\s+", "", clean_val)
+        elif "prima_total" in field_name:
+            clean_val = re.sub(r"(?i)prima\s+total\s*", "", clean_val)
+        elif "igv" in field_name:
+            clean_val = re.sub(r"(?i)^igv\s*", "", clean_val)
         
         clean_val = clean_val.strip(" :-\t\n\r")
         clean_val = clean_text(clean_val)
@@ -361,6 +413,13 @@ def extract_page_fields(page_image: np.ndarray, page: fitz.Page, cfg: Dict[str, 
         result["signatures"][sign_name] = {
             "present": present
         }
+
+    # --------------------------------------------------------
+    # 4) TABLAS DE REPETICIÓN
+    # --------------------------------------------------------
+    # Procesa los campos _0_, _1_ extraídos y crea una estructura amigable
+    tables = extract_tables_from_fields(result["fields"])
+    result["tables"].update(tables)
 
     return result
 
