@@ -234,8 +234,8 @@ def detect_marked_option(image: np.ndarray, group_cfg: Dict[str, Any]) -> Tuple[
     h, w = image.shape[:2]
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-    radius = max(3, int(round(group_cfg["radius_norm"] * w)))
-    inner_radius = max(2, int(round(group_cfg["inner_radius_norm"] * w)))
+    radius = max(3, int(round(group_cfg.get("radius_norm", 0.008) * w)))
+    inner_radius = max(2, int(round(group_cfg.get("inner_radius_norm", 0.005) * w)))
     threshold = float(group_cfg.get("mark_threshold", 0.12))
 
     yy, xx = np.ogrid[:h, :w]

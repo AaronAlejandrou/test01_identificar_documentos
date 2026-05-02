@@ -38,6 +38,11 @@ Una vez que el servidor inicie, abre tu navegador y visita:
 
 Allí encontrarás la interfaz interactiva de Swagger UI donde puedes probar cada endpoint.
 
+## Integración con el Frontend (Studio y Runner)
+Este backend sirve a una aplicación Vue 3 (`frontend_extract_api`). El ciclo de vida principal incluye:
+1. **Calibración (Studio)**: El usuario sube un PDF a `/api/documents/split`, recibe las imágenes y la IA detecta bloques. Luego, el frontend envía el perfil configurado a `/api/config/profile`.
+2. **Ejecución (Runner)**: El usuario selecciona un perfil existente. El frontend obtiene los perfiles desde `/api/config`, envía el PDF a `/api/extractions/run` y guarda los resultados confirmados en `/api/extractions/save`.
+
 ## Resumen de Endpoints
 
 ### 1. Documentos y Studio (Calibración)
@@ -45,7 +50,7 @@ Allí encontrarás la interfaz interactiva de Swagger UI donde puedes probar cad
 - **`POST /api/ai/detect/{document_id}/{page_index}`**: Escanea una imagen específica mediante OCR (PaddleOCR) y heurísticas, retornando una lista de "bounding boxes" sugeridos para textos y posibles checkboxes.
 
 ### 2. Configuración y Perfiles
-- **`GET /api/config`**: Lista todos los perfiles disponibles.
+- **`GET /api/config`**: Lista todos los perfiles y plantillas disponibles.
 - **`GET /api/config/{filename}`**: Obtiene el JSON específico para renderizarlo o editarlo en el Frontend.
 - **`POST /api/config/profile`**: Guarda un "Perfil Maestro" junto con todas sus plantillas de página. Ideal para cuando el usuario finaliza la calibración en el Studio.
 - **`PUT /api/config/{filename}`**: Sobrescribe un archivo de configuración específico.

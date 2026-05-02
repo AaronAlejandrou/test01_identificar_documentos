@@ -173,9 +173,10 @@ def process_pack(pdf_path: str, profile_path: str, output_path: Optional[str] = 
     
     templates = {}
     for tmpl_name in profile.get("page_templates", []):
-        tmpl_path = os.path.join(base_dir, f"{tmpl_name}.json")
+        clean_tmpl_name = tmpl_name.replace('.json', '')
+        tmpl_path = os.path.join(base_dir, f"{clean_tmpl_name}.json")
         if os.path.exists(tmpl_path):
-            templates[tmpl_name] = load_json(tmpl_path)
+            templates[clean_tmpl_name] = load_json(tmpl_path)
         else:
             print(f"Advertencia: No se encontró la plantilla {tmpl_path}")
             
@@ -192,14 +193,24 @@ def process_pack(pdf_path: str, profile_path: str, output_path: Optional[str] = 
         template_name = detect_page_template(page, templates)
         
         if not template_name:
+            # Fallback a índice directo si la IA no detecta 'page_identifiers'
+            page_templates_list = profile.get("page_templates", [])
+            if i < len(page_templates_list):
+                tmpl_name_fallback = page_templates_list[i].replace('.json', '')
+                if tmpl_name_fallback in templates:
+                    template_name = tmpl_name_fallback
+                    print(f" - Pág {i+1}: MATCH FALLBACK - Usando plantilla por orden '{template_name}'")
+
+        if not template_name:
             print(f" - Pág {i+1}: WARNING - Ninguna plantilla hizo match con el texto de la página. (Omitiendo)")
             continue
             
         print(f" - Pág {i+1}: Plantilla detectada -> {template_name}")
         
         cfg = templates[template_name]
-        canonical_w = int(cfg["canonical"]["width"])
-        canonical_h = int(cfg["canonical"]["height"])
+        canonical = cfg.get("canonical", {"width": 2480, "height": 3508})
+        canonical_w = int(canonical["width"])
+        canonical_h = int(canonical["height"])
         
         page_image, _ = render_pdf_page(doc, i, canonical_w, canonical_h)
         page_res = extract_page_fields(page_image, page, cfg, ocr_engine)
@@ -224,6 +235,7 @@ def process_pack(pdf_path: str, profile_path: str, output_path: Optional[str] = 
         save_json(output_path, final_json)
         print(f"Listo. Resultados guardados en {output_path}")
 
+    doc.close()
     return final_json
 
 

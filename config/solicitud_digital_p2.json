@@ -1,0 +1,520 @@
+{
+  "text_fields": {
+    "periodo_cobertura_anios": [
+      0.122416,
+      0.079584,
+      0.168815,
+      0.093717
+    ],
+    "periodo_pago_anios": [
+      0.329733,
+      0.081678,
+      0.38403,
+      0.095811
+    ],
+    "cobertura_principal_fallecimiento_capital": [
+      0.500475,
+      0.297713,
+      0.739384,
+      0.310449
+    ],
+    "cobertura_principal_fallecimiento_prima": [
+      0.745473,
+      0.297393,
+      0.968586,
+      0.310828
+    ],
+    "clausula_fallecimiento_accidente_capital": [
+      0.501284,
+      0.324779,
+      0.73797,
+      0.337516
+    ],
+    "clausula_fallecimiento_accidente_prima": [
+      0.745884,
+      0.325976,
+      0.968997,
+      0.337356
+    ],
+    "clausula_fallecimiento_transito_capital": [
+      0.501058,
+      0.338169,
+      0.738779,
+      0.351604
+    ],
+    "clausula_fallecimiento_transito_prima": [
+      0.746389,
+      0.338581,
+      0.968515,
+      0.351318
+    ],
+    "clausula_invalidez_total_capital": [
+      0.50088,
+      0.352796,
+      0.738375,
+      0.370584
+    ],
+    "clausula_invalidez_total_prima": [
+      0.745907,
+      0.353956,
+      0.968033,
+      0.370882
+    ],
+    "clausula_enfermedades_graves_capital": [
+      0.502556,
+      0.372237,
+      0.738059,
+      0.384881
+    ],
+    "clausula_enfermedades_graves_prima": [
+      0.750101,
+      0.373872,
+      0.968045,
+      0.384237
+    ],
+    "clausula_enfermedades_graves_adelanto_capital": [
+      0.503868,
+      0.387025,
+      0.734632,
+      0.39925
+    ],
+    "clausula_enfermedades_graves_adelanto_prima": [
+      0.749844,
+      0.388884,
+      0.968268,
+      0.398798
+    ],
+    "clausula_invalidez_accidental_capital": [
+      0.504495,
+      0.401823,
+      0.736493,
+      0.412377
+    ],
+    "clausula_invalidez_accidental_prima": [
+      0.744296,
+      0.401053,
+      0.967449,
+      0.412474
+    ],
+    "prima_comercial_anual": [
+      0.231221,
+      0.448333,
+      0.359561,
+      0.459674
+    ],
+    "factor_pago": [
+      0.231173,
+      0.460818,
+      0.358525,
+      0.47087
+    ],
+    "prima_comercial": [
+      0.231998,
+      0.473066,
+      0.360337,
+      0.483314
+    ],
+    "igv": [
+      0.231998,
+      0.48551,
+      0.364286,
+      0.495826
+    ],
+    "prima_total": [
+      0.2317,
+      0.497566,
+      0.366826,
+      0.507837
+    ],
+    "observaciones": [
+      0.043191,
+      0.539941,
+      0.947119,
+      0.575585
+    ],
+    "beneficiarios_0_apellido_paterno": [
+      0.04742,
+      0.699425,
+      0.165888,
+      0.714344
+    ],
+    "beneficiarios_0_apellido_materno": [
+      0.174597,
+      0.699014,
+      0.293372,
+      0.714632
+    ],
+    "beneficiarios_0_nombres": [
+      0.299822,
+      0.698051,
+      0.446163,
+      0.716535
+    ],
+    "beneficiarios_0_fecha_nacimiento": [
+      0.452612,
+      0.698548,
+      0.577889,
+      0.715249
+    ],
+    "beneficiarios_0_doc_identidad": [
+      0.58624,
+      0.698784,
+      0.71427,
+      0.71486
+    ],
+    "beneficiarios_0_parentesco": [
+      0.722933,
+      0.698527,
+      0.854541,
+      0.715565
+    ],
+    "beneficiarios_0_porcentaje": [
+      0.860467,
+      0.698527,
+      0.965564,
+      0.715382
+    ],
+    "beneficiarios_1_apellido_paterno": [
+      0.047053,
+      0.717367,
+      0.167371,
+      0.730104
+    ],
+    "beneficiarios_1_apellido_materno": [
+      0.172764,
+      0.718197,
+      0.295647,
+      0.729496
+    ],
+    "beneficiarios_1_nombres": [
+      0.299366,
+      0.718109,
+      0.445749,
+      0.729821
+    ],
+    "beneficiarios_1_fecha_nacimiento": [
+      0.452115,
+      0.718125,
+      0.580218,
+      0.729821
+    ],
+    "beneficiarios_1_doc_identidad": [
+      0.585906,
+      0.718292,
+      0.717897,
+      0.729921
+    ],
+    "beneficiarios_1_parentesco": [
+      0.722405,
+      0.718292,
+      0.854282,
+      0.729555
+    ],
+    "beneficiarios_1_porcentaje": [
+      0.859712,
+      0.718282,
+      0.965564,
+      0.730004
+    ],
+    "beneficiarios_2_apellido_paterno": [
+      0.047053,
+      0.732103,
+      0.167371,
+      0.74484
+    ],
+    "beneficiarios_2_apellido_materno": [
+      0.173271,
+      0.732777,
+      0.294322,
+      0.743964
+    ],
+    "beneficiarios_2_nombres": [
+      0.299553,
+      0.732294,
+      0.446991,
+      0.743583
+    ],
+    "beneficiarios_2_fecha_nacimiento": [
+      0.451943,
+      0.732477,
+      0.57996,
+      0.743729
+    ],
+    "beneficiarios_2_doc_identidad": [
+      0.584881,
+      0.73285,
+      0.718156,
+      0.743729
+    ],
+    "beneficiarios_2_parentesco": [
+      0.722436,
+      0.732843,
+      0.855576,
+      0.743729
+    ],
+    "beneficiarios_2_porcentaje": [
+      0.860171,
+      0.73216,
+      0.965823,
+      0.743546
+    ],
+    "beneficiarios_contingentes_0_apellido_paterno": [
+      0.04697,
+      0.763771,
+      0.17153,
+      0.79235
+    ],
+    "beneficiarios_contingentes_0_apellido_materno": [
+      0.187573,
+      0.768353,
+      0.294625,
+      0.781442
+    ],
+    "beneficiarios_contingentes_0_nombres": [
+      0.310729,
+      0.770011,
+      0.445238,
+      0.79671
+    ],
+    "beneficiarios_contingentes_0_fecha_nacimiento": [
+      0.462839,
+      0.771625,
+      0.563952,
+      0.783624
+    ],
+    "beneficiarios_contingentes_0_doc_identidad": [
+      0.586763,
+      0.771058,
+      0.709913,
+      0.785752
+    ],
+    "beneficiarios_contingentes_0_parentesco": [
+      0.724569,
+      0.763458,
+      0.856649,
+      0.782206
+    ],
+    "beneficiarios_contingentes_0_porcentaje": [
+      0.849399,
+      0.766171,
+      0.945807,
+      0.78391
+    ],
+    "beneficiarios_contingentes_1_apellido_paterno": [
+      0.040974,
+      0.795936,
+      0.178356,
+      0.811275
+    ],
+    "beneficiarios_contingentes_1_apellido_materno": [
+      0.185587,
+      0.790823,
+      0.313328,
+      0.807867
+    ],
+    "beneficiarios_contingentes_1_nombres": [
+      0.310687,
+      0.791603,
+      0.436018,
+      0.810351
+    ],
+    "beneficiarios_contingentes_1_fecha_nacimiento": [
+      0.45071,
+      0.789119,
+      0.592913,
+      0.809571
+    ],
+    "beneficiarios_contingentes_1_doc_identidad": [
+      0.595323,
+      0.792527,
+      0.718244,
+      0.809571
+    ],
+    "beneficiarios_contingentes_1_parentesco": [
+      0.727885,
+      0.789119,
+      0.853217,
+      0.807867
+    ],
+    "beneficiarios_contingentes_1_porcentaje": [
+      0.855627,
+      0.789119,
+      0.990599,
+      0.81298
+    ],
+    "beneficiarios_contingentes_2_apellido_paterno": [
+      0.043384,
+      0.811275,
+      0.173536,
+      0.830023
+    ],
+    "beneficiarios_contingentes_2_apellido_materno": [
+      0.183176,
+      0.807867,
+      0.308508,
+      0.828319
+    ],
+    "beneficiarios_contingentes_2_nombres": [
+      0.3142,
+      0.807558,
+      0.444351,
+      0.829715
+    ],
+    "beneficiarios_contingentes_2_fecha_nacimiento": [
+      0.4483,
+      0.811275,
+      0.578452,
+      0.830023
+    ],
+    "beneficiarios_contingentes_2_doc_identidad": [
+      0.588093,
+      0.809571,
+      0.715834,
+      0.830023
+    ],
+    "beneficiarios_contingentes_2_parentesco": [
+      0.720655,
+      0.814684,
+      0.855627,
+      0.833432
+    ],
+    "beneficiarios_contingentes_2_porcentaje": [
+      0.85526,
+      0.814493,
+      0.971182,
+      0.829873
+    ],
+    "agente_nombre": [
+      0.044348,
+      0.871269,
+      0.300795,
+      0.897175
+    ],
+    "agente_codigo": [
+      0.341287,
+      0.864451,
+      0.480115,
+      0.888994
+    ],
+    "agencia": [
+      0.510966,
+      0.864779,
+      0.703783,
+      0.887631
+    ],
+    "origen_venta": [
+      0.717712,
+      0.869316,
+      0.963778,
+      0.884849
+    ]
+  },
+  "checkbox_groups": {
+    "periodo_cobertura_tipo": {
+      "options": {
+        "Temporal": [
+          0.058246,
+          0.09215
+        ],
+        "Vitalicio": [
+          0.232985,
+          0.092848
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "frecuencia_pago": {
+      "options": {
+        "Mensual": [
+          0.561731,
+          0.093546
+        ],
+        "Trimestral": [
+          0.695993,
+          0.09215
+        ],
+        "Semestral": [
+          0.817422,
+          0.092848
+        ],
+        "Anual": [
+          0.917132,
+          0.091452
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "tipo_riesgo": {
+      "options": {
+        "Fumador": [
+          0.122416,
+          0.175225
+        ],
+        "No Fumador": [
+          0.275436,
+          0.176621
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "porcentaje_devolucion": {
+      "options": {
+        "0%": [
+          0.362311,
+          0.175225
+        ],
+        "50%": [
+          0.437341,
+          0.175225
+        ],
+        "75%": [
+          0.511382,
+          0.175923
+        ],
+        "100%": [
+          0.57259,
+          0.175923
+        ],
+        "125%": [
+          0.634785,
+          0.175923
+        ],
+        "130%": [
+          0.697968,
+          0.175923
+        ],
+        "135%": [
+          0.76115,
+          0.175225
+        ],
+        "140%": [
+          0.822358,
+          0.175923
+        ],
+        "145%": [
+          0.884553,
+          0.176621
+        ],
+        "150%": [
+          0.947736,
+          0.176621
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "prima_moneda": {
+      "options": {
+        "US$": [
+          0.169803,
+          0.275752
+        ],
+        "S/": [
+          0.245819,
+          0.275752
+        ]
+      },
+      "radius_norm": 0.008
+    }
+  },
+  "signature_fields": {}
+}

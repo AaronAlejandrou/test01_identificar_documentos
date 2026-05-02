@@ -1,0 +1,555 @@
+{
+  "text_fields": {
+    "propuesta_numero": [
+      0.812576,
+      0.011529,
+      0.93328,
+      0.026935
+    ],
+    "asegurado_apellido_paterno": [
+      0.049542,
+      0.176151,
+      0.221738,
+      0.184992
+    ],
+    "asegurado_apellido_materno": [
+      0.407777,
+      0.176381,
+      0.602647,
+      0.185301
+    ],
+    "asegurado_nombres": [
+      0.712213,
+      0.174998,
+      0.973312,
+      0.185578
+    ],
+    "asegurado_fecha_nacimiento_dia": [
+      0.093917,
+      0.210455,
+      0.137485,
+      0.221035
+    ],
+    "asegurado_fecha_nacimiento_mes": [
+      0.199516,
+      0.210455,
+      0.25556,
+      0.221607
+    ],
+    "asegurado_fecha_nacimiento_anio": [
+      0.336759,
+      0.210169,
+      0.437121,
+      0.221893
+    ],
+    "asegurado_numero_documento": [
+      0.463724,
+      0.208739,
+      0.536595,
+      0.221893
+    ],
+    "asegurado_nacionalidad": [
+      0.723817,
+      0.241051,
+      0.911848,
+      0.253061
+    ],
+    "asegurado_direccion": [
+      0.048783,
+      0.292448,
+      0.973571,
+      0.301788
+    ],
+    "asegurado_telefono_casa": [
+      0.048881,
+      0.31401,
+      0.25807,
+      0.324569
+    ],
+    "asegurado_celular": [
+      0.285973,
+      0.314996,
+      0.412455,
+      0.325061
+    ],
+    "asegurado_correo": [
+      0.516929,
+      0.314996,
+      0.913546,
+      0.325748
+    ],
+    "laboral_centro_trabajo": [
+      0.050722,
+      0.390355,
+      0.350376,
+      0.410015
+    ],
+    "laboral_actividad_economica": [
+      0.359402,
+      0.388884,
+      0.742742,
+      0.411302
+    ],
+    "laboral_ingreso_monto": [
+      0.860817,
+      0.3914,
+      0.946866,
+      0.409015
+    ],
+    "laboral_profesion_detalle": [
+      0.050386,
+      0.42589,
+      0.967446,
+      0.43871
+    ],
+    "contratante_nombre": [
+      0.707028,
+      0.554497,
+      0.971584,
+      0.565666
+    ],
+    "contratante_doc": [
+      0.452244,
+      0.587289,
+      0.561262,
+      0.60439
+    ],
+    "contratante_vinculo": [
+      0.05083,
+      0.53273,
+      0.376062,
+      0.542361
+    ],
+    "contratante_razon_social": [
+      0.400596,
+      0.53314,
+      0.969793,
+      0.542608
+    ],
+    "contratante_apellido_paterno": [
+      0.048834,
+      0.556228,
+      0.365054,
+      0.565548
+    ],
+    "contratante_apellido_materno": [
+      0.396432,
+      0.555235,
+      0.691057,
+      0.565666
+    ],
+    "contratante_fecha_nacimiento_dia": [
+      0.090051,
+      0.590404,
+      0.13787,
+      0.605322
+    ],
+    "contratante_fecha_nacimiento_mes": [
+      0.198987,
+      0.589726,
+      0.248349,
+      0.605735
+    ],
+    "contratante_fecha_nacimiento_anio": [
+      0.328157,
+      0.590795,
+      0.428157,
+      0.605344
+    ],
+    "contratante_nacionalidad": [
+      0.715164,
+      0.619974,
+      0.970716,
+      0.639255
+    ],
+    "contratante_direccion": [
+      0.051076,
+      0.670841,
+      0.979684,
+      0.680173
+    ],
+    "contratante_telefono_casa": [
+      0.047819,
+      0.693743,
+      0.259146,
+      0.709752
+    ],
+    "contratante_celular": [
+      0.282036,
+      0.693743,
+      0.494906,
+      0.709507
+    ],
+    "contratante_correo": [
+      0.51058,
+      0.693952,
+      0.970257,
+      0.709507
+    ],
+    "contratante_laboral_centro_trabajo": [
+      0.047824,
+      0.775568,
+      0.343793,
+      0.799443
+    ],
+    "contratante_laboral_actividad_economica": [
+      0.35375,
+      0.773845,
+      0.727052,
+      0.799328
+    ],
+    "contratante_laboral_ingreso_monto": [
+      0.863037,
+      0.775809,
+      0.962717,
+      0.79767
+    ],
+    "contratante_laboral_profesion_detalle": [
+      0.049012,
+      0.814489,
+      0.965021,
+      0.83108
+    ],
+    "laboral_direccion": [
+      0.050636,
+      0.463566,
+      0.968066,
+      0.475554
+    ],
+    "laboral_telefono": [
+      0.049594,
+      0.48785,
+      0.2798,
+      0.499777
+    ],
+    "laboral_correo": [
+      0.464675,
+      0.488443,
+      0.961031,
+      0.499777
+    ],
+    "contratante_laboral_direccion": [
+      0.049551,
+      0.859484,
+      0.968904,
+      0.868226
+    ],
+    "contratante_laboral_telefono": [
+      0.047474,
+      0.881284,
+      0.438662,
+      0.895963
+    ],
+    "contratante_laboral_correo": [
+      0.454483,
+      0.881459,
+      0.965372,
+      0.895691
+    ]
+  },
+  "checkbox_groups": {
+    "asegurado_tipo_documento": {
+      "options": {
+        "DNI": [
+          0.573951,
+          0.20404
+        ],
+        "RUC": [
+          0.663415,
+          0.201054
+        ],
+        "CE": [
+          0.71875,
+          0.200368
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "asegurado_sexo": {
+      "options": {
+        "Masculino": [
+          0.832587,
+          0.219434
+        ],
+        "Femenino": [
+          0.94874,
+          0.219434
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "asegurado_estado_civil": {
+      "options": {
+        "Soltero(a)": [
+          0.131301,
+          0.251352
+        ],
+        "Casado(a)": [
+          0.234959,
+          0.251676
+        ],
+        "Viudo(a)": [
+          0.342109,
+          0.250944
+        ],
+        "Divorciado(a)": [
+          0.37464,
+          0.257601
+        ],
+        "Conviviente": [
+          0.603194,
+          0.251318
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "asegurado_pep": {
+      "options": {
+        "Si": [
+          0.075029,
+          0.352795
+        ],
+        "No": [
+          0.289533,
+          0.352739
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "asegurado_sujeto_obligado": {
+      "options": {
+        "Si": [
+          0.498548,
+          0.35299
+        ],
+        "No": [
+          0.546922,
+          0.353242
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "contratante_tipo_documento": {
+      "options": {
+        "DNI": [
+          0.566193,
+          0.583945
+        ],
+        "CE": [
+          0.710623,
+          0.581556
+        ],
+        "RUC": [
+          0.65547,
+          0.580698
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "contratante_sexo": {
+      "options": {
+        "Masculino": [
+          0.84309,
+          0.599673
+        ],
+        "Femenino": [
+          0.94971,
+          0.599673
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "contratante_estado_civil": {
+      "options": {
+        "Soltero(a)": [
+          0.130521,
+          0.630243
+        ],
+        "Casado(a)": [
+          0.23181,
+          0.630104
+        ],
+        "Viudo(a)": [
+          0.33529,
+          0.63041
+        ],
+        "Divorciado(a)": [
+          0.363656,
+          0.637537
+        ],
+        "Conviviente": [
+          0.593943,
+          0.630556
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "contratante_pep": {
+      "options": {
+        "Si": [
+          0.07564,
+          0.737772
+        ],
+        "No": [
+          0.288477,
+          0.737459
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "contratante_sujeto_obligado": {
+      "options": {
+        "Si": [
+          0.48767,
+          0.737486
+        ],
+        "No": [
+          0.537417,
+          0.737506
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "contratante_laboral_ingreso_moneda": {
+      "options": {
+        "Soles": [
+          0.784647,
+          0.791767
+        ],
+        "Dolares": [
+          0.848927,
+          0.791365
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "asegurado_direccion_tipo_via": {
+      "options": {
+        "Jr": [
+          0.146314,
+          0.28567
+        ],
+        "Av": [
+          0.200407,
+          0.28538
+        ],
+        "Calle": [
+          0.285718,
+          0.28538
+        ],
+        "Pje": [
+          0.362106,
+          0.285933
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "laboral_direccion_tipo_via": {
+      "options": {
+        "Jr": [
+          0.172764,
+          0.458674
+        ],
+        "Av": [
+          0.255744,
+          0.458901
+        ],
+        "Calle": [
+          0.347157,
+          0.458901
+        ],
+        "Pje": [
+          0.421917,
+          0.459071
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "contratante_direccion_tipo_via": {
+      "options": {
+        "Jr": [
+          0.170315,
+          0.854814
+        ],
+        "Av": [
+          0.25273,
+          0.855878
+        ],
+        "Calle": [
+          0.34158,
+          0.854482
+        ],
+        "Pje": [
+          0.41266,
+          0.853085
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "contratante_laboral_direccion_tipo_via": {
+      "options": {
+        "Jr": [
+          0.143148,
+          0.663899
+        ],
+        "Av": [
+          0.19547,
+          0.663899
+        ],
+        "Calle": [
+          0.280372,
+          0.664597
+        ],
+        "Pje": [
+          0.353673,
+          0.664597
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "moneda_solicitud": {
+      "options": {
+        "S/": [
+          0.948762,
+          0.053595
+        ],
+        "US$": [
+          0.949015,
+          0.070048
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "producto_plan": {
+      "options": {
+        "Vida Free": [
+          0.255724,
+          0.112218
+        ],
+        "Vida Free Plus New": [
+          0.421388,
+          0.111526
+        ],
+        "Vida Free Total": [
+          0.606604,
+          0.112218
+        ]
+      },
+      "radius_norm": 0.008
+    },
+    "laboral_ingreso_moneda": {
+      "options": {
+        "S/": [
+          0.784895,
+          0.40395
+        ],
+        "US$": [
+          0.848888,
+          0.402567
+        ]
+      },
+      "radius_norm": 0.008
+    }
+  },
+  "signature_fields": {}
+}

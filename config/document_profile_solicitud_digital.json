@@ -1,17 +1,14 @@
 {
-  "document_type": "solicitud_digital_vida",
-  "identifiers": [
-    "Solicitud de Seguro de Vida",
-    "Declaración Personal de Salud",
-    "Nota de Cobertura Provisional",
-    "Política de Privacidad"
-  ],
+  "document_type": "solicitud_digital",
+  "total_pages": 8,
   "page_templates": [
-    "page_01_solicitud_principal",
-    "page_02_producto_beneficiarios",
-    "page_03_salud",
-    "page_04_labor_consentimiento",
-    "page_05_nota_cobertura",
-    "page_07_privacidad_firma_final"
+    "solicitud_digital_p1.json",
+    "solicitud_digital_p2.json",
+    "solicitud_digital_p3.json",
+    "solicitud_digital_p4.json",
+    "solicitud_digital_p5.json",
+    "solicitud_digital_p6.json",
+    "solicitud_digital_p7.json",
+    "solicitud_digital_p8.json"
   ]
 }
