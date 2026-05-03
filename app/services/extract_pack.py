@@ -238,6 +238,53 @@ def process_pack(pdf_path: str, profile_path: str, output_path: Optional[str] = 
     doc.close()
     return final_json
 
+def process_single_page(pdf_path: str, profile_path: str, page_index: int):
+    profile = load_json(profile_path)
+    base_dir = os.path.dirname(profile_path)
+    
+    templates = {}
+    for tmpl_name in profile.get("page_templates", []):
+        clean_tmpl_name = tmpl_name.replace('.json', '')
+        tmpl_path = os.path.join(base_dir, f"{clean_tmpl_name}.json")
+        if os.path.exists(tmpl_path):
+            templates[clean_tmpl_name] = load_json(tmpl_path)
+            
+    doc = fitz.open(pdf_path)
+    ocr_engine = create_ocr_engine()
+    
+    if page_index < 0 or page_index >= doc.page_count:
+        doc.close()
+        raise ValueError(f"Índice de página {page_index} fuera de rango")
+        
+    page = doc[page_index]
+    template_name = detect_page_template(page, templates)
+    
+    if not template_name:
+        page_templates_list = profile.get("page_templates", [])
+        if page_index < len(page_templates_list):
+            tmpl_name_fallback = page_templates_list[page_index].replace('.json', '')
+            if tmpl_name_fallback in templates:
+                template_name = tmpl_name_fallback
+                
+    if not template_name:
+        doc.close()
+        raise ValueError(f"No se pudo detectar plantilla para la página {page_index}")
+        
+    cfg = templates[template_name]
+    canonical = cfg.get("canonical", {"width": 2480, "height": 3508})
+    canonical_w = int(canonical["width"])
+    canonical_h = int(canonical["height"])
+    
+    page_image, _ = render_pdf_page(doc, page_index, canonical_w, canonical_h)
+    page_res = extract_page_fields(page_image, page, cfg, ocr_engine)
+    
+    doc.close()
+    
+    return {
+        "page_index": page_index,
+        "template": template_name,
+        "data": page_res
+    }
 
 def main():
     parser = argparse.ArgumentParser(description="Extrae información de un paquete documental PDF.")

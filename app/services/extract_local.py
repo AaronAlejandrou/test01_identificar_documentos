@@ -337,10 +337,12 @@ def extract_page_fields(page_image: np.ndarray, page: fitz.Page, cfg: Dict[str, 
         "fields": {},
         "checks": {},
         "signatures": {},
-        "tables": {}
+        "tables": {},
+        "ordered_items": []
     }
 
     cleanup_cfg = cfg.get("cleanup_rules", {})
+    ordered_temp = []
 
     # --------------------------------------------------------
     # 1) CAMPOS DE TEXTO
@@ -385,12 +387,19 @@ def extract_page_fields(page_image: np.ndarray, page: fitz.Page, cfg: Dict[str, 
             source = "empty"
             confidence = 0.0
 
-        result["fields"][field_name] = {
+        item_data = {
             "value": clean_val,
             "raw_value": raw_text,
             "source": source,
             "confidence": confidence
         }
+        result["fields"][field_name] = item_data
+        ordered_temp.append({
+            "key": field_name,
+            "type": "text_fields",
+            "bbox": bbox,
+            "data": item_data
+        })
 
     # --------------------------------------------------------
     # 2) RADIOS / CHECKS
@@ -398,10 +407,26 @@ def extract_page_fields(page_image: np.ndarray, page: fitz.Page, cfg: Dict[str, 
     for group_name, group_cfg in cfg.get("checkbox_groups", {}).items():
         selected, scores = detect_marked_option(page_image, group_cfg)
 
-        result["checks"][group_name] = {
+        item_data = {
             "selected": selected,
             "scores": scores
         }
+        result["checks"][group_name] = item_data
+        
+        # Calcular un bbox Y aproximado basado en la primera opción
+        y_coord = 0
+        options = group_cfg.get("options", {})
+        if options:
+            first_opt = list(options.values())[0]
+            if len(first_opt) >= 2:
+                y_coord = first_opt[1]
+                
+        ordered_temp.append({
+            "key": group_name,
+            "type": "checkbox_groups",
+            "bbox": [0, y_coord, 0, y_coord],
+            "data": item_data
+        })
 
     # --------------------------------------------------------
     # 3) FIRMAS / TINTA
@@ -410,9 +435,16 @@ def extract_page_fields(page_image: np.ndarray, page: fitz.Page, cfg: Dict[str, 
         roi = crop_image(page_image, bbox)
         present = detect_ink_presence(roi)
 
-        result["signatures"][sign_name] = {
+        item_data = {
             "present": present
         }
+        result["signatures"][sign_name] = item_data
+        ordered_temp.append({
+            "key": sign_name,
+            "type": "signature_fields",
+            "bbox": bbox,
+            "data": item_data
+        })
 
     # --------------------------------------------------------
     # 4) TABLAS DE REPETICIÓN
@@ -420,6 +452,13 @@ def extract_page_fields(page_image: np.ndarray, page: fitz.Page, cfg: Dict[str, 
     # Procesa los campos _0_, _1_ extraídos y crea una estructura amigable
     tables = extract_tables_from_fields(result["fields"])
     result["tables"].update(tables)
+
+    # --------------------------------------------------------
+    # 5) ORDENAR ITEMS
+    # --------------------------------------------------------
+    # Ordenar por la coordenada Y del bbox (índice 1)
+    ordered_temp.sort(key=lambda x: x["bbox"][1])
+    result["ordered_items"] = ordered_temp
 
     return result
 
